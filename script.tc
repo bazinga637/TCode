@@ -1,0 +1,14 @@
+
+firstnumber = input("input number 1:")
+operator = input("operator [+,-,/,*]: ")
+secondnumber = input("input number 2: ")
+
+operations = {
+    '-': firstnumber - secondnumber,
+    '+': firstnumber + secondnumber,
+    '*': firstnumber * secondnumber,
+    '/': firstnumber / secondnumber,
+}
+
+output = operations.get(operator)
+print(output)
