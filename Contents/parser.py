@@ -19,7 +19,7 @@ def parser(lexemes):
     open_block_char = '{'
     close_block_char = '}'
 
-    defined_functions = ['print', 'input','get',]
+    defined_functions = ['print','input','get'] # script-defined functions are also added here
 
     def peek():
         return lexemes[pos] if pos < len(lexemes) else None

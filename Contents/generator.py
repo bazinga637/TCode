@@ -22,7 +22,7 @@ def generate_python(ast, indent_level=0):
         elif node_type == 'TableExpression':
             python_code +='{'
             python_code += ''.join(node['body'])
-            python_code += '}'
+            python_code += '}\n'
 
         #Handle Functions: def name(args):
         elif node_type == 'FunctionDefineStatement':

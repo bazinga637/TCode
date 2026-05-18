@@ -4,10 +4,10 @@ operator = input("operator [+,-,/,*]: ")
 secondnumber = input("input number 2: ")
 
 operations = {
-    '-': firstnumber - secondnumber,
-    '+': firstnumber + secondnumber,
-    '*': firstnumber * secondnumber,
-    '/': firstnumber / secondnumber,
+    '-': int(firstnumber) - int(secondnumber),
+    '+': int(firstnumber) + int(secondnumber),
+    '*': int(firstnumber) * int(secondnumber),
+    '/': int(firstnumber) / int(secondnumber),
 }
 
 output = operations.get(operator)
