@@ -14,15 +14,19 @@ def generate_python(ast, indent_level=0):
         # Handle Variables: (str, bool, int, flt)
         if node_type in ['IntegerVariable', 'FloatVariable', 'BoolVariable','StringVariable']:
             python_code += f"{indent}{node['name']} = {node['value']}\n" # add variable statement
+
+        elif node_type == 'Expression':
+            python_code += f"{node['Expression']}\n"
+
+        elif node_type == 'MathExpression':
+            python_code += f"{node['operand']}{node['operator']}{node['quotient']}\n"
         
         # Handle List Variables: {tables}, [lists]
         elif node_type == 'ListExpression':
             python_code += f"[{node['body']}]"
 
         elif node_type == 'TableExpression':
-            python_code +='{'
-            python_code += ''.join(node['body'])
-            python_code += '}\n'
+            python_code +=f"{'{'}{''.join(node['body'])}{'}'}\n"
 
         #Handle Functions: def name(args):
         elif node_type == 'FunctionDefineStatement':
@@ -35,7 +39,7 @@ def generate_python(ast, indent_level=0):
             arguements = ", ".join(node['arguements'])
             python_code += f"{indent}{node['name']}({arguements})\n"# add function statement
 
-        elif node_type == 'VariableExpression':
+        elif node_type == 'AssignmentStatement':
             python_code += f"{indent}{node['name']} = {generate_python(node['body'])}"
             if node['attribute']: python_code += f".{node['attribute']}\n" # only add attribute if there is one
 
@@ -44,7 +48,7 @@ def generate_python(ast, indent_level=0):
         # if
         elif node_type == 'IfStatement':
             keyword = "if"
-            python_code += f"{indent}{keyword} {node['condition']}:\n"# add if statement
+            python_code += f"{indent}{keyword} {node['condition']}:\n" # add if statement
             python_code += generate_python(node['body'], indent_level + 1) # statement body
         #elif
         elif node_type == 'ElifStatement':

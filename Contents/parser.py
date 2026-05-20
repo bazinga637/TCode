@@ -32,19 +32,6 @@ def parser(lexemes):
         pos += 1
         return token
     
-    def parse_block():
-        """Consumes tokens until a closing character is found is found."""
-        consume(open_block_char)
-        block_statements = []
-
-        while peek() != close_block_char and peek() is not None:
-            # Recursively parse statements inside the block
-            block_statements.append(parse_statement())
-
-        if peek() != close_block_char: raise SyntaxError(f"Expected close block character '{close_block_char}' after block.")
-        consume(close_block_char)
-        return block_statements
-    
     def capitalize_if_true_false(value):
         value = {'true': 'True', 'false': 'False'}.get(value,value) # defaults to original value if not in table
         return value
@@ -61,6 +48,66 @@ def parser(lexemes):
 
         arguements.append(arguement)
         return arguements
+    
+    
+    def parse_block():
+        """Consumes tokens until a closing character is found is found."""
+        consume(open_block_char)
+        block_statements = []
+
+        while peek() != close_block_char and peek() is not None:
+            # Recursively parse statements inside the block
+            block_statements.append(parse_statement())
+
+        if peek() != close_block_char: raise SyntaxError(f"Expected close block character '{close_block_char}' after block.")
+        consume(close_block_char)
+        return block_statements
+    
+
+    def parse_expression(name=consume(), line_end_chars=['\n', ';']):
+        
+        # function calls
+        if peek() == '(':
+            if name not in defined_functions: raise ReferenceError(f"{name} is not a defined function.")
+            consume('(')
+            arguements = get_arguements()
+
+            if peek() != ')': raise SyntaxError("Expected bracket ')' after Function arguements.")
+            consume(')')
+            print(arguements)
+            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character after FunctionStatement ({line_end_chars})...")
+            consume()
+            return {'type': 'FunctionStatement', 'name': name, 'arguements': arguements}
+        
+        
+        # table and list expression
+        elif peek() in ['[','{',]:
+            bracket_type = consume()
+            close_bracket_type = {'[':']','{':'}',}.get(bracket_type)
+            body = []
+            while peek() != close_bracket_type: body.append(consume())
+            consume(close_bracket_type)
+
+            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character after FunctionStatement ({line_end_chars})...")
+            consume()
+            return {'type': {'[': 'ListExpression', '{': 'TableExpression'}.get(bracket_type), 'body': body}
+        
+        
+        # math expression
+        elif peek() in ['+','-','/','*']:
+            operator = consume()
+            quotient = parse_expression() # maybe find another word bc quotient is specifically for devision but oh well
+
+            return {'type': 'MathExpression', 'operand': name, 'operator': operator, 'quotient': quotient}
+        
+        else:
+            expression = name
+            while peek() not in line_end_chars: expression += consume()
+            return {'type': 'Expression', 'Expression': expression}
+
+    
+    
+    # Recursively parse statements inside the block
 
     def parse_statement():
         passed = False
@@ -319,44 +366,21 @@ def parser(lexemes):
             if peek() == '\n': # dont include \n as expressions
                 consume()
             else:
-                if peek() in ['[','{',]:
-                    bracket_type = consume()
-                    close_bracket_type = {'[':']','{':'}',}.get(bracket_type)
-                    body = []
-                    while peek() != close_bracket_type: body.append(consume())
-                    consume(close_bracket_type)
+                
+                name = consume()
 
-                    if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character after FunctionStatement ({line_end_chars})...")
-                    consume()
-                    return {'type': {'[': 'ListExpression', '{': 'TableExpression'}.get(bracket_type), 'body': body}
-
-
-                else:
-                    name = consume()
-                    print('name: ', name)
-
-                    # variable expression
-                    if peek() == '=':
-                        consume('=')
-                        body = []
-                        body.append(parse_statement())
-                        attribute = None
-                        if peek() == '.': attribute = parse_statement()
-                        print("body: ", body)
-                        return {'type': 'VariableExpression','name': name, 'body': body, 'attribute': attribute}
+                # variable assign statement
+                if peek() == '=':
+                    consume('=')
+                    body = parse_expression()
+                    attribute = None
+                    if peek() == '.': attribute = parse_statement()
+                    print("body: ", body)
+                    return {'type': 'AssignmentStatement','name': name, 'body': body, 'attribute': attribute}
+                
+                else: return parse_expression(name)
                     
-                    # functions
-                    elif peek() == '(':
-                        if name not in defined_functions: raise ReferenceError(f"{name} is not a defined function.")
-                        consume('(')
-                        arguements = get_arguements()
-
-                        if peek() != ')': raise SyntaxError("Expected bracket ')' after Function arguements.")
-                        consume(')')
-                        print(arguements)
-                        if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character after FunctionStatement ({line_end_chars})...")
-                        consume()
-                        return {'type': 'FunctionStatement', 'name': name, 'arguements': arguements}
+                    
         
         if log: append_log(f"OK\n",False,False)
 

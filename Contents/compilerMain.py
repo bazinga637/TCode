@@ -14,12 +14,12 @@ from datetime import datetime
 # get starting stuff logged
 def append_log(input, logdate=False, logtime=True):
     if logtime:
-        with open('log.txt', 'a') as log: log.write(f"\n{str(datetime.now().time())}:  ")
+        with open('.log', 'a') as log: log.write(f"\n{str(datetime.now().time())}:  ")
 
-    with open('log.txt', 'a') as log: log.write(input)
+    with open('.log', 'a') as log: log.write(input)
     
     if logdate: 
-        with open('log.txt', 'a') as log: log.write(str(datetime.now().date()))
+        with open('.log', 'a') as log: log.write(str(datetime.now().date()))
 
 def append_error(error):
     append_log("\n",False,False)
