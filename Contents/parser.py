@@ -1,4 +1,5 @@
 
+# REDO <--- highlight this to check things to do
 
 def parser(lexemes):
     from datetime import datetime
@@ -20,6 +21,7 @@ def parser(lexemes):
     close_block_char = '}'
 
     defined_functions = ['print','input','get'] # script-defined functions are also added here
+    defined_variables = []
 
     def peek():
         return lexemes[pos] if pos < len(lexemes) else None
@@ -77,11 +79,11 @@ def parser(lexemes):
             print(arguements)
             if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character after FunctionStatement ({line_end_chars})...")
             consume()
-            return {'type': 'FunctionStatement', 'name': name, 'arguements': arguements}
+            return {'type': 'FunctionCall', 'name': name, 'arguements': arguements}
         
         
         # table and list expression
-        elif peek() in ['[','{',]:
+        elif name in ['[','{',]:
             bracket_type = consume()
             close_bracket_type = {'[':']','{':'}',}.get(bracket_type)
             body = []
@@ -96,14 +98,22 @@ def parser(lexemes):
         # math expression
         elif peek() in ['+','-','/','*']:
             operator = consume()
-            quotient = parse_expression() # maybe find another word bc quotient is specifically for devision but oh well
+            quotient = parse_expression() # REDO variable name (quotient is for devision only so it dont fit)
 
             return {'type': 'MathExpression', 'operand': name, 'operator': operator, 'quotient': quotient}
         
         else:
             expression = name
-            while peek() not in line_end_chars: expression += consume()
-            return {'type': 'Expression', 'Expression': expression}
+            while peek() not in [line_end_chars, '=','.']: expression += consume()
+            if peek() == '.': 
+                consume('.')
+                attribute = parse_expression()
+                if attribute['type'] == 'FunctionCall':
+                    return {'type': 'VariableExpression', 'Expression': expression, 'Attribute': attribute}
+                
+                else: raise TypeError(f"Expected FunctionCall type as attribute for variable {expression}") # REDO
+
+            return {'type': 'Expression', 'Expression': expression, 'Attribute': None}
 
     
     
@@ -270,7 +280,7 @@ def parser(lexemes):
 
             else: raise SyntaxError(f"Expected 'in' after LoopVariable in ForStatement.")
             sequence = ''
-            while peek() not in [open_block_char, ':']: sequence += consume() # update to accept functions like 'range()' and stuff
+            while peek() not in [open_block_char, ':']: sequence += consume() # REDO update to accept functions like 'range()' and stuff
             if peek() == open_block_char: body = parse_block()
 
             elif peek() == ':':
@@ -286,7 +296,7 @@ def parser(lexemes):
         # integer
         elif token == 'int':
             consume('int')
-            var = consume()
+            name = consume()
             if peek() != '=': raise SyntaxError("Expected '=' after Integer variable name.")
             consume('=')
             if peek() == '-' or peek() == '+': sign = consume()
@@ -301,13 +311,14 @@ def parser(lexemes):
 
             if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
             consume()
-            return {'type': 'IntegerVariable', 'name': var, 'value': value}
+            defined_variables.append(name)
+            return {'type': 'IntegerVariable', 'name': name, 'value': value}
             
         
         # boolean
         elif token == 'bool':
             consume('bool')
-            var = consume()
+            name = consume()
             if peek() != '=': raise SyntaxError("Expected '=' after Bool variable name.")
             consume('=')
             value = consume()
@@ -315,12 +326,13 @@ def parser(lexemes):
             value = capitalize_if_true_false(value)
             if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
             consume()
-            return {'type': 'BoolVariable', 'name': var, 'value': value}
+            defined_variables.append(name)
+            return {'type': 'BoolVariable', 'name': name, 'value': value}
         
         # float
         elif token == 'flt':
             consume('flt')
-            var = consume()
+            name = consume()
             if peek() != '=': raise SyntaxError("Expected '=' after Float variable name.")
             consume('=')
             if peek() == '.': raise ValueError("Float variable decimal in wrong location.")
@@ -338,11 +350,12 @@ def parser(lexemes):
 
             if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
             consume()
-            return {'type': 'FloatVariable', 'name': var, 'value': value}
+            defined_variables.append(name)
+            return {'type': 'FloatVariable', 'name': name, 'value': value}
         # string
         elif token == 'str':
             consume('str')
-            var = consume()
+            name = consume()
             if peek() != '=': raise SyntaxError("Expected '=' after String variable name.")
             consume('=')
             if peek() not in ["'", '"']: ValueError("String variable value must be inside of either double or single quotes.")
@@ -359,7 +372,8 @@ def parser(lexemes):
 
             if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
             consume()
-            return {'type': 'StringVariable', 'name': var, 'value': value}
+            defined_variables.append(name)
+            return {'type': 'StringVariable', 'name': name, 'value': value}
         
         else:
             # Handle standard expressions
@@ -367,7 +381,7 @@ def parser(lexemes):
                 consume()
             else:
                 
-                name = consume()
+                expression = parse_expression()
 
                 # variable assign statement
                 if peek() == '=':
@@ -376,13 +390,13 @@ def parser(lexemes):
                     attribute = None
                     if peek() == '.': attribute = parse_statement()
                     print("body: ", body)
-                    return {'type': 'AssignmentStatement','name': name, 'body': body, 'attribute': attribute}
+                    return {'type': 'AssignmentStatement','name': parse_expression(), 'body': body, 'attribute': attribute}
                 
-                else: return parse_expression(name)
+                else: return parse_expression()
                     
                     
         
-        if log: append_log(f"OK\n",False,False)
+        if log: append_log("OK\n",False,False)
 
     # main parser loop
     ast = []

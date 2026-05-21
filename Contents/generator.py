@@ -16,7 +16,10 @@ def generate_python(ast, indent_level=0):
             python_code += f"{indent}{node['name']} = {node['value']}\n" # add variable statement
 
         elif node_type == 'Expression':
-            python_code += f"{node['Expression']}\n"
+            if node['Attribute'] == None:
+                python_code += f"{node['Expression']}\n"
+            else:
+                python_code += f"{node['Expression']}.{generate_python(node['Attribute'])}\n"
 
         elif node_type == 'MathExpression':
             python_code += f"{node['operand']}{node['operator']}{node['quotient']}\n"
