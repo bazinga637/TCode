@@ -4,7 +4,7 @@ def generate_python(ast, indent_level=0):
     indent = "    " * indent_level
 
     ast = [item for item in ast if item is not None] # removes None
-
+    print('AST: ',ast)
     for node in ast:
         
         if node is None: continue
@@ -20,6 +20,9 @@ def generate_python(ast, indent_level=0):
                 python_code += f"{node['Expression']}\n"
             else:
                 python_code += f"{node['Expression']}.{generate_python(node['Attribute'])}\n"
+
+        elif node_type == 'VariableExpression':
+            python_code += f"" # WORK ON TS
 
         elif node_type == 'MathExpression':
             python_code += f"{node['operand']}{node['operator']}{node['quotient']}\n"
@@ -38,13 +41,14 @@ def generate_python(ast, indent_level=0):
             # Recursively generate body with extra indentation
             python_code += generate_python(node['body'], indent_level + 1) # statement body
         
-        elif node_type == 'FunctionStatement':
+        elif node_type == 'FunctionCall':
             arguements = ", ".join(node['arguements'])
             python_code += f"{indent}{node['name']}({arguements})\n"# add function statement
 
         elif node_type == 'AssignmentStatement':
-            python_code += f"{indent}{node['name']} = {generate_python(node['body'])}"
-            if node['attribute']: python_code += f".{node['attribute']}\n" # only add attribute if there is one
+            python_code += f"{indent}{node['name']} = {generate_python([node['body']])}"
+            #if node['attribute']: python_code += f".{node['attribute']}\n" # only add attribute if there is one
+            print('test')
 
 
         # Handle Conditional Statements

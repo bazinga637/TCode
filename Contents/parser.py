@@ -7,12 +7,12 @@ def parser(lexemes):
 
     def append_log(input, logdate=False, logtime=True):
         if logtime:
-            with open('log.txt', 'a') as log: log.write(f"{str(datetime.now().time())}:  ")
+            with open('.log', 'a') as log: log.write(f"{str(datetime.now().time())}:  ")
 
-        with open('log.txt', 'a') as log: log.write(input)
+        with open('.log', 'a') as log: log.write(input)
         
         if logdate: 
-            with open('log.txt', 'a') as log: log.write(str(datetime.now().date()))
+            with open('.log', 'a') as log: log.write(str(datetime.now().date()))
 
 
     pos = 0
@@ -66,27 +66,36 @@ def parser(lexemes):
         return block_statements
     
 
-    def parse_expression(name=consume(), line_end_chars=['\n', ';']):
-        
+    def parse_expression(name=None, line_end_chars=['\n', ';']):
+        if name == None:
+            name = consume()
+
+        print('name: ', name)
+        print('peek: ', peek())
+
+        if name == None: return
+
         # function calls
-        if peek() == '(':
+        elif peek() == '(':
             if name not in defined_functions: raise ReferenceError(f"{name} is not a defined function.")
             consume('(')
             arguements = get_arguements()
 
             if peek() != ')': raise SyntaxError("Expected bracket ')' after Function arguements.")
             consume(')')
-            print(arguements)
+            print('args: ',arguements)
             if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character after FunctionStatement ({line_end_chars})...")
             consume()
             return {'type': 'FunctionCall', 'name': name, 'arguements': arguements}
         
         
         # table and list expression
+        
         elif name in ['[','{',]:
-            bracket_type = consume()
-            close_bracket_type = {'[':']','{':'}',}.get(bracket_type)
+            bracket_type = name
+            close_bracket_type = {'[':']','{':'}'}.get(bracket_type)
             body = []
+            print('aa',close_bracket_type)
             while peek() != close_bracket_type: body.append(consume())
             consume(close_bracket_type)
 
@@ -111,7 +120,7 @@ def parser(lexemes):
                 if attribute['type'] == 'FunctionCall':
                     return {'type': 'VariableExpression', 'Expression': expression, 'Attribute': attribute}
                 
-                else: raise TypeError(f"Expected FunctionCall type as attribute for variable {expression}") # REDO
+                else: raise TypeError(f"Expected FunctionCall type as attribute for variable {expression}.") # REDO
 
             return {'type': 'Expression', 'Expression': expression, 'Attribute': None}
 
@@ -122,6 +131,7 @@ def parser(lexemes):
     def parse_statement():
         passed = False
         if passed:
+            if log: append_log("OK\n",False,False)
             last_token = token
 
         token = peek()
@@ -382,21 +392,20 @@ def parser(lexemes):
             else:
                 
                 expression = parse_expression()
-
+                
                 # variable assign statement
                 if peek() == '=':
+                    name = expression['Expression']
+                    print('expression name', name)
                     consume('=')
                     body = parse_expression()
-                    attribute = None
-                    if peek() == '.': attribute = parse_statement()
+                    print('ex',expression)
+
                     print("body: ", body)
-                    return {'type': 'AssignmentStatement','name': parse_expression(), 'body': body, 'attribute': attribute}
+                    return {'type': 'AssignmentStatement','name': name, 'body': body}
                 
                 else: return parse_expression()
                     
-                    
-        
-        if log: append_log("OK\n",False,False)
 
     # main parser loop
     ast = []
