@@ -1,5 +1,7 @@
 # TCode
 
+FINALLY got this crap working
+
 Language written in python as a fun challange in grade 10 and (so far) has no real use.
 
 Its called TCode cuz its code made by the T man
