@@ -98,7 +98,7 @@ def main(current_os):
                             script.write(f"{y}\n")
                             
                 if 'e' in command: # executes file with compiler using 'e' for exec
-                    with open("compiler.py",'r') as compiler: # change folder name eventually
+                    with open("Contents/compilerMain.py",'r') as compiler:
                         exec(compiler.read())
                         input('Press enter to continue...')
                 

@@ -70,8 +70,8 @@ def parser(lexemes):
         if name == None:
             name = consume()
 
-        print('name: ', name)
-        print('peek: ', peek())
+        #print('name: ', name)
+        #print('peek: ', peek())
 
         if name == None: return
 
@@ -83,7 +83,7 @@ def parser(lexemes):
 
             if peek() != ')': raise SyntaxError("Expected bracket ')' after Function arguements.")
             consume(')')
-            print('args: ',arguements)
+            #print('args: ',arguements)
             if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character after FunctionStatement ({line_end_chars})...")
             consume()
             return {'type': 'FunctionCall', 'name': name, 'arguements': arguements}
@@ -95,7 +95,7 @@ def parser(lexemes):
             bracket_type = name
             close_bracket_type = {'[':']','{':'}'}.get(bracket_type)
             body = []
-            print('aa',close_bracket_type)
+            #print('aa',close_bracket_type)
             while peek() != close_bracket_type: body.append(consume())
             consume(close_bracket_type)
 
@@ -118,11 +118,11 @@ def parser(lexemes):
                 consume('.')
                 attribute = parse_expression()
                 if attribute['type'] == 'FunctionCall':
-                    return {'type': 'VariableExpression', 'Expression': expression, 'Attribute': attribute}
+                    return {'type': 'VariableExpression', 'expression': expression, 'attribute': attribute}
                 
                 else: raise TypeError(f"Expected FunctionCall type as attribute for variable {expression}.") # REDO
 
-            return {'type': 'Expression', 'Expression': expression, 'Attribute': None}
+            return {'type': 'VariableExpression', 'expression': expression, 'attribute': None}
 
     
     
@@ -395,16 +395,16 @@ def parser(lexemes):
                 
                 # variable assign statement
                 if peek() == '=':
-                    name = expression['Expression']
-                    print('expression name', name)
+                    name = expression['expression']
+                    #print('expression name', name)
                     consume('=')
                     body = parse_expression()
-                    print('ex',expression)
+                    #print('ex',expression)
 
-                    print("body: ", body)
+                    #print("body: ", body)
                     return {'type': 'AssignmentStatement','name': name, 'body': body}
                 
-                else: return parse_expression()
+                else: return expression
                     
 
     # main parser loop

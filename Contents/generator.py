@@ -4,25 +4,22 @@ def generate_python(ast, indent_level=0):
     indent = "    " * indent_level
 
     ast = [item for item in ast if item is not None] # removes None
-    print('AST: ',ast)
+    #print('AST: ',ast, type(ast))
     for node in ast:
         
         if node is None: continue
-        print('node:  ', node, ' var type:  ',type(node))
+        #print('node:  ', node, ' var type:  ',type(node))
         node_type = node.get('type')
 
         # Handle Variables: (str, bool, int, flt)
         if node_type in ['IntegerVariable', 'FloatVariable', 'BoolVariable','StringVariable']:
             python_code += f"{indent}{node['name']} = {node['value']}\n" # add variable statement
 
-        elif node_type == 'Expression':
-            if node['Attribute'] == None:
-                python_code += f"{node['Expression']}\n"
-            else:
-                python_code += f"{node['Expression']}.{generate_python(node['Attribute'])}\n"
-
         elif node_type == 'VariableExpression':
-            python_code += f"" # WORK ON TS
+            if node['attribute'] == None or 'attribute' not in node:
+                python_code += f"{node['expression']}\n"
+            else:
+                python_code += f"{node['expression']}.{generate_python([node['attribute']])}\n"
 
         elif node_type == 'MathExpression':
             python_code += f"{node['operand']}{node['operator']}{node['quotient']}\n"
@@ -48,7 +45,6 @@ def generate_python(ast, indent_level=0):
         elif node_type == 'AssignmentStatement':
             python_code += f"{indent}{node['name']} = {generate_python([node['body']])}"
             #if node['attribute']: python_code += f".{node['attribute']}\n" # only add attribute if there is one
-            print('test')
 
 
         # Handle Conditional Statements
