@@ -1,6 +1,10 @@
 # TCode
 
-Language written in python for fun and (so far) has no real use. legit just a python clone
+Language written in python as a fun challange in grade 10 and (so far) has no real use.
+
+Its called TCode cuz its code made by the T man
+
+TCode file format is .tc because it wasnt used all that much and makes sense
 
 almost everything here requires a python compiler to run. might do something about it later.
 
