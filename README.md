@@ -4,6 +4,8 @@ FINALLY got this crap working
 
 This is still super early in development, I just got it working on 05/22/26 at 10:14 pm
 
+My first actually kinda big project, so it won't stand up to any professional standards it just works for the most part
+
 General purpose language written in python as a fun challange in grade 10 and (so far) has no real use.
 
 Its called TCode cuz its code made by the T man
