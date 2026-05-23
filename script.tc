@@ -1,3 +1,9 @@
+flt firstnumber = 0.0
+str operator = ' '
+flt secondnumber = 0.0
+
+flt output = 0.0
+
 firstnumber = input("input number 1:")
 operator = input("operator [+,-,/,*]: ")
 secondnumber = input("input number 2: ")
