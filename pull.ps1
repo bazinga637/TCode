@@ -5,4 +5,4 @@ git clone https://github.com/bazinga637/TCode.git ../TCodetemp/TCode # clone to 
 
 git pull origin main
 
-Move-Item -Path "\home\mjkstra\Documents\TCodetemp\TCode" -Destination "\home\mjkstra\Documents" -Force # replace from temp folder to actual folder
+Move-Item -Path "C:\home\mjkstra\Documents\TCodetemp\TCode" -Destination "C:\home\mjkstra\Documents" -Force # replace from temp folder to actual folder
