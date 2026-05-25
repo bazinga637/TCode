@@ -1,6 +1,6 @@
 <##>
 git add .
-git commit -m "update"
+git commit -m "test"
 git push
 
 # below is code to setup
