@@ -46,6 +46,10 @@ def generate_python(ast, indent_level=0):
             python_code += f"{indent}{node['name']} = {generate_python([node['body']])}"
             #if node['attribute']: python_code += f".{node['attribute']}\n" # only add attribute if there is one
 
+        
+        #elif node_type == 'ImportStatement':
+        #    python_code += f"{}"
+
 
         # Handle Conditional Statements
         # if

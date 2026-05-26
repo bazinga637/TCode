@@ -1,1 +1,130 @@
 
+
+10:08:10.384693:  New session: 2026-05-26
+10:08:10.385341:  Compiler Start
+
+10:08:10.385674:  Lexing...
+10:08:10.386359:  Lexemes: ['flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'print', '(', 'output', ')', '\n']
+
+
+10:08:10.387733:  Parsing...10:08:10.388020:  Parsing token flt...   10:08:10.388311:  Parsing token str...   10:08:10.388584:  Parsing token flt...   10:08:10.388861:  Parsing token flt...   10:08:10.389138:  Parsing token firstnumber...   10:08:10.389440:  Parsing token operator...   10:08:10.389704:  Parsing token secondnumber...   10:08:10.389971:  Parsing token operations...   10:08:10.390232:  Parsing token output...   10:08:10.390481:  Parsing token print...   
+10:08:10.390785:  AST: [{'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['output']}]
+
+10:08:10.391088:  Generating code...
+10:08:10.391477:  Python code:
+
+firstnumber = 0.0
+operator = ' '
+secondnumber = 0.0
+output = 0.0
+firstnumber = input("inputnumber1:")
+operator = input("operator[+, -, /, *]:")
+secondnumber = input("inputnumber2:")
+operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+output = operations.get(operator)
+
+print(output)
+
+
+10:08:10.391746:  Executing...
+10:08:14.125819:  Executed successfully.
+
+10:08:14.126879:  Run time: 0:00:03.742102
+10:08:14.127661:  End session 2026-05-26
+---------------------------------------------
+
+10:20:20.522385:  New session: 2026-05-26
+10:20:20.523709:  Compiler Start
+
+10:20:20.524313:  Lexing...
+10:20:20.524901:  Lexemes: ['flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'print', '(', 'output', ')', '\n']
+
+
+10:20:20.525242:  Parsing...10:20:20.525530:  Parsing token flt...   10:20:20.525916:  Parsing token str...   10:20:20.526215:  Parsing token flt...   10:20:20.526598:  Parsing token flt...   10:20:20.526919:  Parsing token firstnumber...   10:20:20.527243:  Parsing token operator...   10:20:20.527513:  Parsing token secondnumber...   10:20:20.527991:  Parsing token operations...   10:20:20.528787:  Parsing token output...   10:20:20.529191:  Parsing token print...   
+10:20:20.529589:  AST: [{'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['output']}]
+
+10:20:20.529969:  Generating code...
+10:20:20.530303:  Python code:
+
+firstnumber = 0.0
+operator = ' '
+secondnumber = 0.0
+output = 0.0
+firstnumber = input("inputnumber1:")
+operator = input("operator[+, -, /, *]:")
+secondnumber = input("inputnumber2:")
+operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+output = operations.get(operator)
+
+print(output)
+
+
+10:20:20.530608:  Executing...
+10:20:27.327505:  Executed successfully.
+
+10:20:27.327961:  Run time: 0:00:06.805764
+10:20:27.328237:  End session 2026-05-26
+---------------------------------------------
+
+11:35:20.151175:  New session: 2026-05-26
+11:35:20.151808:  Compiler Start
+
+11:35:20.152145:  Lexing...
+11:35:20.152973:  Lexemes: ['flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'print', '(', 'output', ')', '\n']
+
+
+11:35:20.153341:  Parsing...
+
+11:35:20.154120:  ERROR: [WinError 3] The system cannot find the path specified: 'Modules'
+
+11:35:20.154726:  Run time: 0:00:00.003562
+11:35:20.155164:  End session 2026-05-26
+---------------------------------------------
+
+11:36:08.234834:  New session: 2026-05-26
+11:36:08.235408:  Compiler Start
+
+11:36:08.235768:  Lexing...
+11:36:08.236287:  Lexemes: ['flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'print', '(', 'output', ')', '\n']
+
+
+11:36:08.236551:  Parsing...11:36:08.236814:  Parsing token flt...   11:36:08.237185:  Parsing token str...   11:36:08.237475:  Parsing token flt...   11:36:08.237766:  Parsing token flt...   11:36:08.238160:  Parsing token firstnumber...   11:36:08.238454:  Parsing token operator...   11:36:08.238742:  Parsing token secondnumber...   11:36:08.239129:  Parsing token operations...   11:36:08.239489:  Parsing token output...   11:36:08.239869:  Parsing token print...   
+11:36:08.240192:  AST: [{'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['output']}]
+
+11:36:08.240496:  Generating code...
+11:36:08.240774:  Python code:
+
+firstnumber = 0.0
+operator = ' '
+secondnumber = 0.0
+output = 0.0
+firstnumber = input("inputnumber1:")
+operator = input("operator[+, -, /, *]:")
+secondnumber = input("inputnumber2:")
+operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+output = operations.get(operator)
+
+print(output)
+
+
+11:36:08.241021:  Executing...
+11:36:15.333560:  Executed successfully.
+
+11:36:15.334383:  Run time: 0:00:07.099474
+11:36:15.334912:  End session 2026-05-26
+---------------------------------------------

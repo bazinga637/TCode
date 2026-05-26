@@ -1,5 +1,6 @@
 
 # REDO <--- highlight this to check things to do
+import os
 
 def parser(lexemes):
     from datetime import datetime
@@ -22,6 +23,8 @@ def parser(lexemes):
 
     defined_functions = ['print','input','get'] # script-defined functions are also added here
     defined_variables = []
+
+    #builtin_modules = os.listdir('Modules')
 
     def peek():
         return lexemes[pos] if pos < len(lexemes) else None
@@ -74,6 +77,18 @@ def parser(lexemes):
         #print('peek: ', peek())
 
         if name == None: return
+
+        # module
+        elif name == '#':
+            consume('#')
+            module = ''
+            attribute = None
+            while peek() not in [line_end_chars, '.', ',']: module += consume()
+            if peek() == '.':
+                attribute = parse_expression()
+                if attribute['type'] != 'FunctionCall': raise TypeError(f"Expected type FunctionCall as attribute for Module.")
+
+            return {'type': 'ModuleExpression', 'module': module, 'attribute': attribute}
 
         # function calls
         elif peek() == '(':
@@ -157,6 +172,19 @@ def parser(lexemes):
                 while peek() != '*' and lexemes[pos + 1] != '/': # breaks on */
                     consume()
                 consume('*'); consume('/')
+
+        # get module or sum - REDO
+        elif token == 'import':
+            consume('import')
+            modules = []
+            while True:
+                if peek() != '#': raise TypeError(f"Expected type Module, got {type(peek())}.")
+                module = parse_expression()
+                modules.append(module)
+                if peek() == ',': consume(',')
+                else: break
+            entries = os.listdir('.')
+            return {'type': 'ImportStatement', 'modules': modules}
 
         # define function
         elif token == 'func':

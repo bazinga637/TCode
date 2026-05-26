@@ -12,6 +12,7 @@ def lexer(source_code):
         'and','or','true','false', # booleans
         'int','bool','str','flt', # variables
         'func', # defining
+        'import',
     ]
 
     ## leave values blank
