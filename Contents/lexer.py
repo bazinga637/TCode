@@ -13,6 +13,7 @@ def lexer(source_code):
         'int','bool','str','flt', # variables
         'func', # defining
         'import',
+        'return',
     ]
 
     ## leave values blank

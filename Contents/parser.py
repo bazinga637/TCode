@@ -144,296 +144,313 @@ def parser(lexemes):
     # Recursively parse statements inside the block
 
     def parse_statement():
-        passed = False
-        if passed:
-            if log: append_log("OK\n",False,False)
-            last_token = token
+        try:
+            if not hasattr(parse_statement, "call_count"):
+                parse_statement.call_count = 0
+            parse_statement.call_count += 1
 
-        token = peek()
-
-        line_end_chars = [';','\n']
-
-        passed = True # not before first token
-
-        if token == '\n': log = False
-        else: log = True
-        if log: append_log(f"Parsing token {token}...   ")
-
-        # comment
-        if token == '/':
-            #print('comment2')
-            if lexemes[pos + 1] == '/': # // comment
-                consume('/'); consume('/')
-                while peek() != '\n': # breaks on new line
-                    consume()
-
-            elif lexemes[pos + 1] == '*': # /* comment */
-                consume('/'); consume('*')
-                while peek() != '*' and lexemes[pos + 1] != '/': # breaks on */
-                    consume()
-                consume('*'); consume('/')
-
-        # get module or sum - REDO
-        elif token == 'import':
-            consume('import')
-            modules = []
-            while True:
-                if peek() != '#': raise TypeError(f"Expected type Module, got {type(peek())}.")
-                module = parse_expression()
-                modules.append(module)
-                if peek() == ',': consume(',')
-                else: break
-            entries = os.listdir('.')
-            return {'type': 'ImportStatement', 'modules': modules}
-
-        # define function
-        elif token == 'func':
-            consume('func')
-            name = consume()
-            if peek() != '(': raise SyntaxError("Expected bracket '(' after defined function name.")
-            consume('(')
-            arguements = []
-            while peek() != ')': # arguement loop
-                arguements.append(consume())
-                if peek() == ',': consume(',')
-
-                else: break
-
-            else: arguements = ''
-
-            if peek() != ')': raise SyntaxError("Expected bracket ')' after function arguements.")
-            consume(')')
-            if peek() == open_block_char: body = parse_block() # if it sees an open block char '[' it'll parse the block
-
-            else: body = [consume()]
-
-            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
-            consume()
-
-            defined_functions.append[name] # add to list of already defined functions, for debugging with calling an undefined function
-            return {'type': 'FunctionDefineStatement', 'name': name, 'arguements': arguements, 'body': body}
-
-    # IF STUFF
-        # if
-        elif token == 'if':
-            consume('if')
-            condition = ''
-            while peek() not in [open_block_char, ':']: condition += consume()
-
-            if '=' in condition and '==' not in condition: raise SyntaxError(f"Expected boolean operator, got '='. (did you mean to use '=='?)")
-            
-            condition = capitalize_if_true_false(condition)
-            if peek() == open_block_char: body = parse_block() # if it sees an open block char (often '{' or '[') it'll parse the block
-            
-            elif peek() == ':': 
-                consume(':')
-                body = [parse_statement()]
+            if parse_statement.call_count > 1: passed = True
+            else: passed = False
                 
+                
+            token = peek()
 
-            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
-            consume()
+            line_end_chars = [';','\n']
 
-            return {'type': 'IfStatement', 'condition': condition, 'body': body}
-        
-        # elif
-        elif token == 'elif':
-            if last_token not in ['if','elif']: raise SyntaxError("Expected 'if' or 'elif' statement before 'elif' statement.")
-            consume('elif')
-            condition = ''
-            while peek() not in [open_block_char, ':']: condition += consume()
+            passed = True # not before first token
 
-            if '=' in condition and '==' not in condition: raise SyntaxError(f"Expected boolean operator, got '='. (did you mean to use '=='?)")
-            
-            condition = capitalize_if_true_false(condition)
-            if peek() == open_block_char: body = parse_block() # if it sees an open block char (often '{' or '[') it'll parse the block
-            
-            elif peek() == ':': 
-                consume(':')
-                body = [parse_statement()]
+            if token == '\n': log = False
+            else: log = True
+            if log: append_log(f"Parsing token {token}...")
 
-            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
-            consume()
+            # comment
+            if token == '/':
+                #print('comment2')
+                if lexemes[pos + 1] == '/': # // comment
+                    consume('/'); consume('/')
+                    while peek() != '\n': # breaks on new line
+                        consume()
 
-            return {'type': 'ElifStatement', 'condition': condition, 'body': body}
+                elif lexemes[pos + 1] == '*': # /* comment */
+                    consume('/'); consume('*')
+                    while peek() != '*' and lexemes[pos + 1] != '/': # breaks on */
+                        consume()
+                    consume('*'); consume('/')
 
-        # else
-        elif token == 'else':
-            if last_token not in ['if','elif']: raise SyntaxError("Expected 'if' or 'elif' statement before 'else' statement.")
-            consume('else')
-            
-            if peek() == open_block_char: body = parse_block() # if it sees an open block char (often '{' or '[') it'll parse the block
-            
-            elif peek() == ':': 
-                consume(':')
-                body = [parse_statement()]
+            # return
+            if token == 'return':
+                consume('return')
+                if peek() in line_end_chars : return {'type': 'ReturnStatement', 'arguement': None}
+                else:
+                    arguement = parse_expression
+                return {'type': 'ReturnStatement', 'arguement': arguement}
 
-            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
-            consume()
+            # get module or sum - REDO
+            elif token == 'import':
+                consume('import')
+                modules = []
+                while True:
+                    if peek() != '#': raise TypeError(f"Expected type Module, got {type(peek())}.")
+                    module = parse_expression()
+                    modules.append(module)
+                    if peek() == ',': consume(',')
+                    else: break
+                entries = os.listdir('.')
+                return {'type': 'ImportStatement', 'modules': modules}
 
-            return {'type': 'ElseStatement', 'condition': condition, 'body': body}
-        
-        # repeat
-        elif token == 'repeat':
-            consume('repeat')
-            condition = ''
-            while peek() not in [open_block_char, ':']: condition += consume()
+            # define function
+            elif token == 'func':
+                consume('func')
+                name = consume()
+                if peek() != '(': raise SyntaxError("Expected bracket '(' after defined function name.")
+                consume('(')
+                arguements = []
+                while peek() != ')': # arguement loop
+                    arguements.append(consume())
+                    if peek() == ',': consume(',')
 
-            if peek() == open_block_char: body = parse_block()
+                    else: break
 
-            elif peek == ':':
-                consume(':')
-                body = [parse_statement()]
+                else: arguements = ''
 
-            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
-            consume()
+                if peek() != ')': raise SyntaxError("Expected bracket ')' after function arguements.")
+                consume(')')
+                if peek() == open_block_char: body = parse_block() # if it sees an open block char '[' it'll parse the block
 
-            return {'type': 'RepeatStatement', 'condition': condition, 'body': body}
-        
-        # while
-        elif token == 'while':
-            consume('while')
-            condition = ''
-            while peek() not in [open_block_char, ':']: condition += consume()
-            
-            condition = capitalize_if_true_false(condition)
-            if peek() == open_block_char: body = parse_block()
+                else: body = [consume()]
 
-            elif peek == ':':
-                consume(':')
-                body = [parse_statement()]
-
-            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
-            consume()
-
-            return {'type': 'WhileStatement', 'condition': condition, 'body': body}
-        
-        # for
-        elif token == 'for':
-            consume('for')
-            #loop_variable = consume()
-            if 'in' in peek():
-                condition = peek()
-                loop_variable = condition[:condition.index('in')]
-                lexemes[pos] = condition[condition.index('in')+2:]
-
-            else: raise SyntaxError(f"Expected 'in' after LoopVariable in ForStatement.")
-            sequence = ''
-            while peek() not in [open_block_char, ':']: sequence += consume() # REDO update to accept functions like 'range()' and stuff
-            if peek() == open_block_char: body = parse_block()
-
-            elif peek() == ':':
-                consume(':')
-                body = [parse_statement()]
-
-            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
-            consume()
-
-            return {'type': 'ForStatement', 'loopVariable': loop_variable, 'sequence': sequence, 'body': body}
-
-    # VARIABLES
-        # integer
-        elif token == 'int':
-            consume('int')
-            name = consume()
-            if peek() != '=': raise SyntaxError("Expected '=' after Integer variable name.")
-            consume('=')
-            if peek() == '-' or peek() == '+': sign = consume()
-
-            else: sign = ''
-            
-            if any(char not in ['1','2','3','4','5','6','7','8','9','0'] for char in peek()): raise ValueError("Float variable contains non-numerical characters.")
-            value = sign + consume()
-            value = int(value)
-            if value == -0:
-                value = 0
-
-            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
-            consume()
-            defined_variables.append(name)
-            return {'type': 'IntegerVariable', 'name': name, 'value': value}
-            
-        
-        # boolean
-        elif token == 'bool':
-            consume('bool')
-            name = consume()
-            if peek() != '=': raise SyntaxError("Expected '=' after Bool variable name.")
-            consume('=')
-            value = consume()
-            if value not in ['true','false']: raise ValueError("Boolean variable must be 'true' or 'false'.")
-            value = capitalize_if_true_false(value)
-            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
-            consume()
-            defined_variables.append(name)
-            return {'type': 'BoolVariable', 'name': name, 'value': value}
-        
-        # float
-        elif token == 'flt':
-            consume('flt')
-            name = consume()
-            if peek() != '=': raise SyntaxError("Expected '=' after Float variable name.")
-            consume('=')
-            if peek() == '.': raise ValueError("Float variable decimal in wrong location.")
-            if any(char not in ['1','2','3','4','5','6','7','8','9','0'] for char in peek()): raise ValueError("Float variable contains non-numerical characters.")
-            value = consume()
-
-            if peek() != '.': raise ValueError("Float variable missing decimal.")
-            value += consume('.')
-
-            if peek() == '.': raise ValueError("Float variable decimal in wrong location.")
-            if any(char not in ['1','2','3','4','5','6','7','8','9','0'] for char in peek()): raise ValueError("Float variable contains non-numerical characters.")
-            value += consume()
-
-            value = float(value)
-
-            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
-            consume()
-            defined_variables.append(name)
-            return {'type': 'FloatVariable', 'name': name, 'value': value}
-        # string
-        elif token == 'str':
-            consume('str')
-            name = consume()
-            if peek() != '=': raise SyntaxError("Expected '=' after String variable name.")
-            consume('=')
-            if peek() not in ["'", '"']: ValueError("String variable value must be inside of either double or single quotes.")
-            if peek() == "'": 
-                consume("'")
-                current_quote_char = "'"
-
-            elif peek() == '"':
-                consume('"')
-                current_quote_char = '"'
-
-            value = f"{current_quote_char}{consume()}{current_quote_char}"
-            consume(current_quote_char)
-
-            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
-            consume()
-            defined_variables.append(name)
-            return {'type': 'StringVariable', 'name': name, 'value': value}
-        
-        else:
-            # Handle standard expressions
-            if peek() == '\n': # dont include \n as expressions
+                if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
                 consume()
-            else:
-                
-                expression = parse_expression()
-                
-                # variable assign statement
-                if peek() == '=':
-                    name = expression['expression']
-                    #print('expression name', name)
-                    consume('=')
-                    body = parse_expression()
-                    #print('ex',expression)
 
-                    #print("body: ", body)
-                    return {'type': 'AssignmentStatement','name': name, 'body': body}
+                defined_functions.append[name] # add to list of already defined functions, for debugging with calling an undefined function
+                return {'type': 'FunctionDefineStatement', 'name': name, 'arguements': arguements, 'body': body}
+
+        # IF STUFF
+            # if
+            elif token == 'if':
+                consume('if')
+                condition = ''
+                while peek() not in [open_block_char, ':']: condition += consume()
+
+                if '=' in condition and '==' not in condition: raise SyntaxError(f"Expected boolean operator, got '='. (did you mean to use '=='?)")
                 
-                else: return expression
+                condition = capitalize_if_true_false(condition)
+                if peek() == open_block_char: body = parse_block() # if it sees an open block char (often '{' or '[') it'll parse the block
+                
+                elif peek() == ':': 
+                    consume(':')
+                    body = [parse_statement()]
                     
+
+                if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
+                consume()
+
+                return {'type': 'IfStatement', 'condition': condition, 'body': body}
+            
+            # elif
+            elif token == 'elif':
+                #if last_token not in ['if','elif']: raise SyntaxError("Expected 'if' or 'elif' statement before 'elif' statement.")
+                consume('elif')
+                condition = ''
+                while peek() not in [open_block_char, ':']: condition += consume()
+
+                if '=' in condition and '==' not in condition: raise SyntaxError(f"Expected boolean operator, got '='. (did you mean to use '=='?)")
+                
+                condition = capitalize_if_true_false(condition)
+                if peek() == open_block_char: body = parse_block() # if it sees an open block char (often '{' or '[') it'll parse the block
+                
+                elif peek() == ':': 
+                    consume(':')
+                    body = [parse_statement()]
+
+                if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
+                consume()
+
+                return {'type': 'ElifStatement', 'condition': condition, 'body': body}
+
+            # else
+            elif token == 'else':
+                #if last_token not in ['if','elif']: raise SyntaxError("Expected 'if' or 'elif' statement before 'else' statement.")
+                consume('else')
+                
+                if peek() == open_block_char: body = parse_block() # if it sees an open block char (often '{' or '[') it'll parse the block
+                
+                elif peek() == ':': 
+                    consume(':')
+                    body = [parse_statement()]
+
+                if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
+                consume()
+
+                return {'type': 'ElseStatement', 'condition': condition, 'body': body}
+            
+            # repeat
+            elif token == 'repeat':
+                consume('repeat')
+                condition = ''
+                while peek() not in [open_block_char, ':']: condition += consume()
+
+                if peek() == open_block_char: body = parse_block()
+
+                elif peek == ':':
+                    consume(':')
+                    body = [parse_statement()]
+
+                if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
+                consume()
+
+                return {'type': 'RepeatStatement', 'condition': condition, 'body': body}
+            
+            # while
+            elif token == 'while':
+                consume('while')
+                condition = ''
+                while peek() not in [open_block_char, ':']: condition += consume()
+                
+                condition = capitalize_if_true_false(condition)
+                if peek() == open_block_char: body = parse_block()
+
+                elif peek == ':':
+                    consume(':')
+                    body = [parse_statement()]
+
+                if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
+                consume()
+
+                return {'type': 'WhileStatement', 'condition': condition, 'body': body}
+            
+            # for
+            elif token == 'for':
+                consume('for')
+                #loop_variable = consume()
+                if 'in' in peek():
+                    condition = peek()
+                    loop_variable = condition[:condition.index('in')]
+                    lexemes[pos] = condition[condition.index('in')+2:]
+
+                else: raise SyntaxError(f"Expected 'in' after LoopVariable in ForStatement.")
+                sequence = ''
+                while peek() not in [open_block_char, ':']: sequence += consume() # REDO update to accept functions like 'range()' and stuff
+                if peek() == open_block_char: body = parse_block()
+
+                elif peek() == ':':
+                    consume(':')
+                    body = [parse_statement()]
+
+                if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
+                consume()
+
+                return {'type': 'ForStatement', 'loopVariable': loop_variable, 'sequence': sequence, 'body': body}
+
+        # VARIABLES
+            # integer
+            elif token == 'int':
+                consume('int')
+                name = consume()
+                if peek() != '=': raise SyntaxError("Expected '=' after Integer variable name.")
+                consume('=')
+                if peek() == '-' or peek() == '+': sign = consume()
+
+                else: sign = ''
+                
+                if any(char not in ['1','2','3','4','5','6','7','8','9','0'] for char in peek()): raise ValueError("Float variable contains non-numerical characters.")
+                value = sign + consume()
+                value = int(value)
+                if value == -0:
+                    value = 0
+
+                if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
+                consume()
+                defined_variables.append(name)
+                return {'type': 'IntegerVariable', 'name': name, 'value': value}
+                
+            
+            # boolean
+            elif token == 'bool':
+                consume('bool')
+                name = consume()
+                if peek() != '=': raise SyntaxError("Expected '=' after Bool variable name.")
+                consume('=')
+                value = consume()
+                if value not in ['true','false']: raise ValueError("Boolean variable must be 'true' or 'false'.")
+                value = capitalize_if_true_false(value)
+                if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
+                consume()
+                defined_variables.append(name)
+                return {'type': 'BoolVariable', 'name': name, 'value': value}
+            
+            # float
+            elif token == 'flt':
+                consume('flt')
+                name = consume()
+                if peek() != '=': raise SyntaxError("Expected '=' after Float variable name.")
+                consume('=')
+                if peek() == '.': raise ValueError("Float variable decimal in wrong location.")
+                if any(char not in ['1','2','3','4','5','6','7','8','9','0'] for char in peek()): raise ValueError("Float variable contains non-numerical characters.")
+                value = consume()
+
+                if peek() != '.': raise ValueError("Float variable missing decimal.")
+                value += consume('.')
+
+                if peek() == '.': raise ValueError("Float variable decimal in wrong location.")
+                if any(char not in ['1','2','3','4','5','6','7','8','9','0'] for char in peek()): raise ValueError("Float variable contains non-numerical characters.")
+                value += consume()
+
+                value = float(value)
+
+                if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
+                consume()
+                defined_variables.append(name)
+                return {'type': 'FloatVariable', 'name': name, 'value': value}
+            # string
+            elif token == 'str':
+                consume('str')
+                name = consume()
+                if peek() != '=': raise SyntaxError("Expected '=' after String variable name.")
+                consume('=')
+                if peek() not in ["'", '"']: ValueError("String variable value must be inside of either double or single quotes.")
+                if peek() == "'": 
+                    consume("'")
+                    current_quote_char = "'"
+
+                elif peek() == '"':
+                    consume('"')
+                    current_quote_char = '"'
+
+                value = f"{current_quote_char}{consume()}{current_quote_char}"
+                consume(current_quote_char)
+
+                if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
+                consume()
+                defined_variables.append(name)
+                return {'type': 'StringVariable', 'name': name, 'value': value}
+            
+            else:
+                # Handle standard expressions
+                if peek() == '\n': # dont include \n as expressions
+                    consume()
+                else:
+                    
+                    expression = parse_expression()
+                    
+                    # variable assign statement
+                    if peek() == '=':
+                        name = expression['expression']
+                        #print('expression name', name)
+                        consume('=')
+                        body = parse_expression()
+                        #print('ex',expression)
+
+                        #print("body: ", body)
+                        return {'type': 'AssignmentStatement','name': name, 'body': body}
+                    
+                    else: return expression
+        
+        except:
+            if log: append_log(f"{'NOT OK\n'}",False,False)
+            raise
+        finally:
+            if log: append_log("OK\n",False,False)
 
     # main parser loop
     ast = []

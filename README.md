@@ -10,7 +10,7 @@ General purpose language written in python as a fun challange in grade 10 and (s
 
 Its called TCode cuz its code made by the T man
 
-TCode file format is .tc because it wasnt used all that much and makes sense
+TCode file format is .tc, it wasnt used all that much and makes sense
 
 almost everything here requires a python compiler to run. might do something about it later.
 

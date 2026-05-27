@@ -41,7 +41,7 @@ except Exception as error:
 else:
 
     try: # parse
-        append_log("Parsing...")
+        append_log("Parsing...\n")
         ast = parser(lexemes)
         append_log(f"AST: {ast}\n")
 
