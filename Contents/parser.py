@@ -21,8 +21,10 @@ def parser(lexemes):
     open_block_char = '{'
     close_block_char = '}'
 
-    defined_functions = ['print','input','get'] # script-defined functions are also added here
-    defined_variables = []
+    # script-defined functions are also added here
+    defined_functions = ['print','input','get',
+                         'int','float','str','bool','type',] 
+    defined_variables = [] # so the parser can check for un-initialized variables
 
     #builtin_modules = os.listdir('Modules')
 
