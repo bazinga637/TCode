@@ -43,7 +43,7 @@ def generate_python(ast, indent_level=0):
             python_code += f"{indent}{node['name']}({arguements})\n"# add function statement
 
         elif node_type == 'ReturnStatement':
-            python_code += f"return {generate_python([node['arguement']])}"
+            python_code += f"{indent}return {generate_python([node['arguement']])}"
 
         elif node_type == 'AssignmentStatement':
             python_code += f"{indent}{node['name']} = {generate_python([node['body']])}"

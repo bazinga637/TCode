@@ -83,7 +83,7 @@ def parser(lexemes):
             consume('#')
             module = ''
             attribute = None
-            while peek() not in [line_end_chars, '.', ',']: module += consume()
+            while peek() not in line_end_chars + ['.', ',']: module += consume()
             if peek() == '.':
                 attribute = parse_expression()
                 if attribute['type'] != 'FunctionCall': raise TypeError(f"Expected type FunctionCall as attribute for Module.")
@@ -99,8 +99,6 @@ def parser(lexemes):
             if peek() != ')': raise SyntaxError("Expected bracket ')' after Function arguements.")
             consume(')')
             #print('args: ',arguements)
-            if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character after FunctionStatement ({line_end_chars})...")
-            consume()
             return {'type': 'FunctionCall', 'name': name, 'arguements': arguements}
         
         
@@ -128,7 +126,9 @@ def parser(lexemes):
         
         else:
             expression = name
-            while peek() not in [line_end_chars, '=','.']: expression += consume()
+            print(peek())
+            while peek() not in line_end_chars + ['=','.']: expression += consume()
+            print('test2')
             if peek() == '.': 
                 consume('.')
                 attribute = parse_expression()
@@ -144,20 +144,10 @@ def parser(lexemes):
     # Recursively parse statements inside the block
 
     def parse_statement():
-        try:
-            if not hasattr(parse_statement, "call_count"):
-                parse_statement.call_count = 0
-            parse_statement.call_count += 1
-
-            if parse_statement.call_count > 1: passed = True
-            else: passed = False
-                
-                
+        try:    
             token = peek()
 
             line_end_chars = [';','\n']
-
-            passed = True # not before first token
 
             if token == '\n': log = False
             else: log = True
@@ -182,7 +172,8 @@ def parser(lexemes):
                 consume('return')
                 if peek() in line_end_chars : return {'type': 'ReturnStatement', 'arguement': None}
                 else:
-                    arguement = parse_expression
+                    arguement = parse_expression()
+                    print('test')
                 return {'type': 'ReturnStatement', 'arguement': arguement}
 
             # get module or sum - REDO
@@ -210,9 +201,8 @@ def parser(lexemes):
                     if peek() == ',': consume(',')
 
                     else: break
-
+                
                 else: arguements = ''
-
                 if peek() != ')': raise SyntaxError("Expected bracket ')' after function arguements.")
                 consume(')')
                 if peek() == open_block_char: body = parse_block() # if it sees an open block char '[' it'll parse the block
@@ -222,7 +212,7 @@ def parser(lexemes):
                 if peek() not in line_end_chars: raise SyntaxError(f"Expected line-ending character ({line_end_chars})...")
                 consume()
 
-                defined_functions.append[name] # add to list of already defined functions, for debugging with calling an undefined function
+                defined_functions.append(name) # add to list of already defined functions, for debugging with calling an undefined function
                 return {'type': 'FunctionDefineStatement', 'name': name, 'arguements': arguements, 'body': body}
 
         # IF STUFF

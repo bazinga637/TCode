@@ -1007,3 +1007,635 @@ OK
 11:03:31.563007:  Run time: 0:00:00.008988
 11:03:31.563307:  End session 2026-05-27
 ---------------------------------------------
+
+10:54:37.265318:  New session: 2026-05-28
+10:54:37.265900:  Compiler Start
+
+10:54:37.266173:  Lexing...
+10:54:37.266697:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:54:37.267024:  Parsing...
+10:54:37.267285:  Parsing token func...10:54:37.267543:  Parsing token flt...OK
+10:54:37.267926:  Parsing token str...OK
+10:54:37.268541:  Parsing token flt...OK
+10:54:37.269095:  Parsing token flt...OK
+10:54:37.269510:  Parsing token firstnumber...OK
+10:54:37.269897:  Parsing token operator...OK
+10:54:37.270795:  Parsing token secondnumber...OK
+10:54:37.271555:  Parsing token operations...OK
+10:54:37.272228:  Parsing token output...OK
+10:54:37.272603:  Parsing token return...OK
+10:54:37.272952:  Parsing token output...NOT OK
+OK
+NOT OK
+OK
+
+
+10:54:37.274151:  ERROR: can only concatenate str (not "NoneType") to str
+
+10:54:37.274505:  Run time: 0:00:00.009394
+10:54:37.274753:  End session 2026-05-28
+---------------------------------------------
+
+10:55:15.377077:  New session: 2026-05-28
+10:55:15.378092:  Compiler Start
+
+10:55:15.378690:  Lexing...
+10:55:15.379506:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:55:15.379830:  Parsing...
+10:55:15.380115:  Parsing token func...10:55:15.380384:  Parsing token flt...OK
+10:55:15.380805:  Parsing token str...OK
+10:55:15.381221:  Parsing token flt...OK
+10:55:15.381793:  Parsing token flt...OK
+10:55:15.382286:  Parsing token firstnumber...OK
+10:55:15.382945:  Parsing token operator...OK
+10:55:15.383526:  Parsing token secondnumber...OK
+10:55:15.383941:  Parsing token operations...OK
+10:55:15.384599:  Parsing token output...OK
+10:55:15.385183:  Parsing token return...OK
+10:55:15.385745:  Parsing token output...NOT OK
+OK
+NOT OK
+OK
+
+
+10:55:15.386764:  ERROR: can only concatenate str (not "NoneType") to str
+
+10:55:15.387015:  Run time: 0:00:00.010038
+10:55:15.387250:  End session 2026-05-28
+---------------------------------------------
+
+10:55:24.336023:  New session: 2026-05-28
+10:55:24.336562:  Compiler Start
+
+10:55:24.336822:  Lexing...
+10:55:24.337369:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:55:24.337812:  Parsing...
+10:55:24.338230:  Parsing token func...10:55:24.338777:  Parsing token flt...OK
+10:55:24.339304:  Parsing token str...OK
+10:55:24.339706:  Parsing token flt...OK
+10:55:24.340147:  Parsing token flt...OK
+10:55:24.340812:  Parsing token firstnumber...OK
+10:55:24.341389:  Parsing token operator...OK
+10:55:24.341792:  Parsing token secondnumber...OK
+10:55:24.342157:  Parsing token operations...OK
+10:55:24.342524:  Parsing token output...OK
+10:55:24.343067:  Parsing token return...OK
+10:55:24.343548:  Parsing token output...NOT OK
+OK
+NOT OK
+OK
+
+
+10:55:24.344799:  ERROR: can only concatenate str (not "NoneType") to str
+
+10:55:24.345159:  Run time: 0:00:00.009162
+10:55:24.345430:  End session 2026-05-28
+---------------------------------------------
+
+10:55:41.553212:  New session: 2026-05-28
+10:55:41.553772:  Compiler Start
+
+10:55:41.554138:  Lexing...
+10:55:41.554715:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:55:41.554990:  Parsing...
+10:55:41.555255:  Parsing token func...10:55:41.555506:  Parsing token flt...OK
+10:55:41.556167:  Parsing token str...OK
+10:55:41.556667:  Parsing token flt...OK
+10:55:41.557226:  Parsing token flt...OK
+10:55:41.557692:  Parsing token firstnumber...OK
+10:55:41.558081:  Parsing token operator...OK
+10:55:41.558452:  Parsing token secondnumber...OK
+10:55:41.558814:  Parsing token operations...OK
+10:55:41.559337:  Parsing token output...OK
+10:55:41.559847:  Parsing token return...NOT OK
+OK
+NOT OK
+OK
+
+
+10:55:41.560833:  ERROR: can only concatenate str (not "NoneType") to str
+
+10:55:41.561142:  Run time: 0:00:00.007981
+10:55:41.561481:  End session 2026-05-28
+---------------------------------------------
+
+10:56:45.349267:  New session: 2026-05-28
+10:56:45.350125:  Compiler Start
+
+10:56:45.350419:  Lexing...
+10:56:45.350977:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:56:45.351316:  Parsing...
+10:56:45.351583:  Parsing token func...10:56:45.351980:  Parsing token flt...OK
+10:56:45.352427:  Parsing token str...OK
+10:56:45.352793:  Parsing token flt...OK
+10:56:45.353230:  Parsing token flt...OK
+10:56:45.353985:  Parsing token firstnumber...OK
+10:56:45.354434:  Parsing token operator...OK
+10:56:45.354842:  Parsing token secondnumber...OK
+10:56:45.355649:  Parsing token operations...OK
+10:56:45.356372:  Parsing token output...OK
+10:56:45.356757:  Parsing token return...NOT OK
+OK
+NOT OK
+OK
+
+
+10:56:45.357745:  ERROR: can only concatenate str (not "NoneType") to str
+
+10:56:45.358001:  Run time: 0:00:00.008922
+10:56:45.358256:  End session 2026-05-28
+---------------------------------------------
+
+10:57:23.454419:  New session: 2026-05-28
+10:57:23.455007:  Compiler Start
+
+10:57:23.455358:  Lexing...
+10:57:23.456158:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:57:23.456676:  Parsing...
+10:57:23.457006:  Parsing token func...10:57:23.457387:  Parsing token flt...OK
+10:57:23.457872:  Parsing token str...OK
+10:57:23.458763:  Parsing token flt...OK
+10:57:23.459329:  Parsing token flt...OK
+10:57:23.459731:  Parsing token firstnumber...OK
+10:57:23.460522:  Parsing token operator...OK
+10:57:23.461556:  Parsing token secondnumber...OK
+10:57:23.462532:  Parsing token operations...OK
+10:57:23.463992:  Parsing token output...OK
+10:57:23.464797:  Parsing token return...NOT OK
+OK
+NOT OK
+OK
+
+
+10:57:23.466158:  ERROR: can only concatenate str (not "NoneType") to str
+
+10:57:23.466484:  Run time: 0:00:00.012152
+10:57:23.466760:  End session 2026-05-28
+---------------------------------------------
+
+10:58:00.919129:  New session: 2026-05-28
+10:58:00.919677:  Compiler Start
+
+10:58:00.919927:  Lexing...
+10:58:00.920449:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:58:00.920848:  Parsing...
+10:58:00.921316:  Parsing token func...10:58:00.921719:  Parsing token flt...OK
+10:58:00.922299:  Parsing token str...OK
+10:58:00.922695:  Parsing token flt...OK
+10:58:00.923080:  Parsing token flt...OK
+10:58:00.923449:  Parsing token firstnumber...OK
+10:58:00.924057:  Parsing token operator...OK
+10:58:00.924894:  Parsing token secondnumber...OK
+10:58:00.925534:  Parsing token operations...OK
+10:58:00.926229:  Parsing token output...OK
+10:58:00.927979:  Parsing token return...NOT OK
+OK
+NOT OK
+OK
+
+
+10:58:00.929301:  ERROR: can only concatenate str (not "NoneType") to str
+
+10:58:00.929686:  Run time: 0:00:00.010609
+10:58:00.929986:  End session 2026-05-28
+---------------------------------------------
+
+10:58:23.961874:  New session: 2026-05-28
+10:58:23.962415:  Compiler Start
+
+10:58:23.962675:  Lexing...
+10:58:23.963228:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:58:23.963641:  Parsing...
+10:58:23.964129:  Parsing token func...10:58:23.964497:  Parsing token flt...OK
+10:58:23.965043:  Parsing token str...OK
+10:58:23.965433:  Parsing token flt...OK
+10:58:23.965814:  Parsing token flt...OK
+10:58:23.966206:  Parsing token firstnumber...OK
+10:58:23.966858:  Parsing token operator...OK
+10:58:23.968205:  Parsing token secondnumber...OK
+10:58:23.969171:  Parsing token operations...OK
+10:58:23.969887:  Parsing token output...OK
+10:58:23.971004:  Parsing token return...NOT OK
+OK
+NOT OK
+OK
+
+
+10:58:23.972123:  ERROR: can only concatenate str (not "NoneType") to str
+
+10:58:23.972372:  Run time: 0:00:00.010581
+10:58:23.972650:  End session 2026-05-28
+---------------------------------------------
+
+10:59:03.221719:  New session: 2026-05-28
+10:59:03.222301:  Compiler Start
+
+10:59:03.222581:  Lexing...
+10:59:03.223272:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:59:03.223747:  Parsing...
+10:59:03.224160:  Parsing token func...10:59:03.224562:  Parsing token flt...OK
+10:59:03.225204:  Parsing token str...OK
+10:59:03.225774:  Parsing token flt...OK
+10:59:03.226250:  Parsing token flt...OK
+10:59:03.226819:  Parsing token firstnumber...OK
+10:59:03.227866:  Parsing token operator...OK
+10:59:03.228566:  Parsing token secondnumber...OK
+10:59:03.229122:  Parsing token operations...OK
+10:59:03.230162:  Parsing token output...OK
+10:59:03.231063:  Parsing token return...NOT OK
+OK
+NOT OK
+OK
+
+
+10:59:03.232299:  ERROR: can only concatenate str (not "NoneType") to str
+
+10:59:03.232587:  Run time: 0:00:00.010961
+10:59:03.232959:  End session 2026-05-28
+---------------------------------------------
+
+10:59:39.807276:  New session: 2026-05-28
+10:59:39.807981:  Compiler Start
+
+10:59:39.808346:  Lexing...
+10:59:39.809182:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', ';', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:59:39.809605:  Parsing...
+10:59:39.810013:  Parsing token func...10:59:39.810422:  Parsing token flt...OK
+10:59:39.810925:  Parsing token str...OK
+10:59:39.811355:  Parsing token flt...OK
+10:59:39.811880:  Parsing token flt...OK
+10:59:39.812323:  Parsing token firstnumber...OK
+10:59:39.813198:  Parsing token operator...OK
+10:59:39.814044:  Parsing token secondnumber...OK
+10:59:39.814651:  Parsing token operations...OK
+10:59:39.815611:  Parsing token output...OK
+10:59:39.816479:  Parsing token return...NOT OK
+OK
+NOT OK
+OK
+
+
+10:59:39.817599:  ERROR: can only concatenate str (not "NoneType") to str
+
+10:59:39.817857:  Run time: 0:00:00.010661
+10:59:39.818119:  End session 2026-05-28
+---------------------------------------------
+
+11:00:41.080549:  New session: 2026-05-28
+11:00:41.081215:  Compiler Start
+
+11:00:41.081513:  Lexing...
+11:00:41.082145:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+11:00:41.082579:  Parsing...
+11:00:41.082853:  Parsing token func...11:00:41.083134:  Parsing token flt...OK
+11:00:41.083635:  Parsing token str...OK
+11:00:41.084643:  Parsing token flt...OK
+11:00:41.085321:  Parsing token flt...OK
+11:00:41.085763:  Parsing token firstnumber...OK
+11:00:41.086416:  Parsing token operator...OK
+11:00:41.087078:  Parsing token secondnumber...OK
+11:00:41.087765:  Parsing token operations...OK
+11:00:41.088705:  Parsing token output...OK
+11:00:41.090030:  Parsing token return...NOT OK
+OK
+NOT OK
+OK
+
+
+11:00:41.091753:  ERROR: can only concatenate str (not "NoneType") to str
+
+11:00:41.092079:  Run time: 0:00:00.011587
+11:00:41.092350:  End session 2026-05-28
+---------------------------------------------
+
+11:03:10.511909:  New session: 2026-05-28
+11:03:10.512534:  Compiler Start
+
+11:03:10.512907:  Lexing...
+11:03:10.514175:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+11:03:10.514535:  Parsing...
+11:03:10.514819:  Parsing token func...11:03:10.515087:  Parsing token flt...OK
+11:03:10.515462:  Parsing token str...OK
+11:03:10.515808:  Parsing token flt...OK
+11:03:10.516186:  Parsing token flt...OK
+11:03:10.516574:  Parsing token firstnumber...OK
+11:03:10.517494:  Parsing token operator...OK
+11:03:10.518365:  Parsing token secondnumber...OK
+11:03:10.519357:  Parsing token operations...OK
+11:03:10.520129:  Parsing token output...OK
+11:03:10.520866:  Parsing token return...NOT OK
+OK
+NOT OK
+OK
+
+
+11:03:10.522202:  ERROR: can only concatenate str (not "NoneType") to str
+
+11:03:10.522779:  Run time: 0:00:00.010928
+11:03:10.523166:  End session 2026-05-28
+---------------------------------------------
+
+11:06:30.813979:  New session: 2026-05-28
+11:06:30.814536:  Compiler Start
+
+11:06:30.814807:  Lexing...
+11:06:30.815357:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+11:06:30.815695:  Parsing...
+11:06:30.816174:  Parsing token func...11:06:30.816660:  Parsing token flt...OK
+11:06:30.817252:  Parsing token str...OK
+11:06:30.818131:  Parsing token flt...OK
+11:06:30.818839:  Parsing token flt...OK
+11:06:30.819439:  Parsing token firstnumber...OK
+11:06:30.820446:  Parsing token operator...OK
+11:06:30.821428:  Parsing token secondnumber...OK
+11:06:30.822407:  Parsing token operations...OK
+11:06:30.823577:  Parsing token output...OK
+11:06:30.824485:  Parsing token return...NOT OK
+OK
+NOT OK
+OK
+
+
+11:06:30.825990:  ERROR: can only concatenate str (not "NoneType") to str
+
+11:06:30.826469:  Run time: 0:00:00.012511
+11:06:30.826853:  End session 2026-05-28
+---------------------------------------------
+
+11:08:06.027550:  New session: 2026-05-28
+11:08:06.028101:  Compiler Start
+
+11:08:06.028410:  Lexing...
+11:08:06.029045:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+11:08:06.029335:  Parsing...
+11:08:06.029852:  Parsing token func...11:08:06.030212:  Parsing token flt...OK
+11:08:06.030733:  Parsing token str...OK
+11:08:06.031289:  Parsing token flt...OK
+11:08:06.032010:  Parsing token flt...OK
+11:08:06.032484:  Parsing token firstnumber...OK
+11:08:06.033032:  Parsing token operator...OK
+11:08:06.033626:  Parsing token secondnumber...OK
+11:08:06.034206:  Parsing token operations...OK
+11:08:06.034812:  Parsing token output...OK
+11:08:06.035474:  Parsing token return...OK
+NOT OK
+OK
+
+
+11:08:06.036937:  ERROR: 'builtin_function_or_method' object is not subscriptable
+
+11:08:06.037238:  Run time: 0:00:00.009795
+11:08:06.037505:  End session 2026-05-28
+---------------------------------------------
+
+11:09:16.121411:  New session: 2026-05-28
+11:09:16.121991:  Compiler Start
+
+11:09:16.122366:  Lexing...
+11:09:16.123096:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+11:09:16.123520:  Parsing...
+11:09:16.123912:  Parsing token func...11:09:16.124202:  Parsing token flt...OK
+11:09:16.124884:  Parsing token str...OK
+11:09:16.125450:  Parsing token flt...OK
+11:09:16.125913:  Parsing token flt...OK
+11:09:16.126285:  Parsing token firstnumber...OK
+11:09:16.126898:  Parsing token operator...OK
+11:09:16.127554:  Parsing token secondnumber...OK
+11:09:16.128386:  Parsing token operations...OK
+11:09:16.129066:  Parsing token output...OK
+11:09:16.129718:  Parsing token return...OK
+NOT OK
+OK
+
+
+11:09:16.130914:  ERROR: 'builtin_function_or_method' object is not subscriptable
+
+11:09:16.131287:  Run time: 0:00:00.009892
+11:09:16.131668:  End session 2026-05-28
+---------------------------------------------
+
+11:12:01.557266:  New session: 2026-05-28
+11:12:01.557829:  Compiler Start
+
+11:12:01.558102:  Lexing...
+11:12:01.558642:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+11:12:01.559037:  Parsing...
+11:12:01.559463:  Parsing token func...11:12:01.559913:  Parsing token flt...OK
+11:12:01.560478:  Parsing token str...OK
+11:12:01.560994:  Parsing token flt...OK
+11:12:01.561487:  Parsing token flt...OK
+11:12:01.561897:  Parsing token firstnumber...OK
+11:12:01.562468:  Parsing token operator...OK
+11:12:01.562964:  Parsing token secondnumber...OK
+11:12:01.563850:  Parsing token operations...OK
+11:12:01.564550:  Parsing token output...OK
+11:12:01.565261:  Parsing token return...OK
+OK
+11:12:01.566425:  Parsing token print...NOT OK
+OK
+
+
+11:12:01.567171:  ERROR: Expected line-ending character after FunctionStatement (['\n', ';'])...
+
+11:12:01.567560:  Run time: 0:00:00.010360
+11:12:01.567966:  End session 2026-05-28
+---------------------------------------------
+
+11:15:07.781128:  New session: 2026-05-28
+11:15:07.781729:  Compiler Start
+
+11:15:07.782013:  Lexing...
+11:15:07.782552:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+11:15:07.782888:  Parsing...
+11:15:07.783376:  Parsing token func...11:15:07.783947:  Parsing token flt...OK
+11:15:07.784621:  Parsing token str...OK
+11:15:07.785216:  Parsing token flt...OK
+11:15:07.785774:  Parsing token flt...OK
+11:15:07.786375:  Parsing token firstnumber...OK
+11:15:07.787303:  Parsing token operator...OK
+11:15:07.787943:  Parsing token secondnumber...OK
+11:15:07.788460:  Parsing token operations...OK
+11:15:07.788951:  Parsing token output...OK
+11:15:07.789610:  Parsing token return...OK
+OK
+11:15:07.791068:  Parsing token print...OK
+11:15:07.791608:  Parsing token )...OK
+
+11:15:07.792707:  AST: [None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:15:07.793349:  Generating code...
+11:15:07.794110:  Python code:
+
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+return output
+print(calc()
+)
+
+
+11:15:07.794724:  Executing...
+
+11:15:07.800967:  ERROR: 'return' outside function (<string>, line 17)
+
+11:15:07.801521:  Run time: 0:00:00.020410
+11:15:07.802430:  End session 2026-05-28
+---------------------------------------------
+
+11:15:59.793776:  New session: 2026-05-28
+11:15:59.794304:  Compiler Start
+
+11:15:59.794585:  Lexing...
+11:15:59.795201:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+11:15:59.795607:  Parsing...
+11:15:59.795888:  Parsing token func...11:15:59.796162:  Parsing token flt...OK
+11:15:59.796729:  Parsing token str...OK
+11:15:59.797423:  Parsing token flt...OK
+11:15:59.798253:  Parsing token flt...OK
+11:15:59.798650:  Parsing token firstnumber...OK
+11:15:59.799195:  Parsing token operator...OK
+11:15:59.799780:  Parsing token secondnumber...OK
+11:15:59.800390:  Parsing token operations...OK
+11:15:59.800956:  Parsing token output...OK
+11:15:59.801675:  Parsing token return...OK
+OK
+11:15:59.802819:  Parsing token print...OK
+11:15:59.803376:  Parsing token )...OK
+
+11:15:59.804052:  AST: [None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:15:59.804368:  Generating code...
+11:15:59.805040:  Python code:
+
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+
+
+11:15:59.805472:  Executing...
+
+11:16:04.884555:  ERROR: division by zero
+
+11:16:04.884951:  Run time: 0:00:05.091230
+11:16:04.885222:  End session 2026-05-28
+---------------------------------------------
+
+11:16:25.915601:  New session: 2026-05-28
+11:16:25.916702:  Compiler Start
+
+11:16:25.917132:  Lexing...
+11:16:25.917738:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+11:16:25.918067:  Parsing...
+11:16:25.918454:  Parsing token func...11:16:25.918771:  Parsing token flt...OK
+11:16:25.919173:  Parsing token str...OK
+11:16:25.919762:  Parsing token flt...OK
+11:16:25.920425:  Parsing token flt...OK
+11:16:25.921089:  Parsing token firstnumber...OK
+11:16:25.921691:  Parsing token operator...OK
+11:16:25.922684:  Parsing token secondnumber...OK
+11:16:25.923382:  Parsing token operations...OK
+11:16:25.924018:  Parsing token output...OK
+11:16:25.924714:  Parsing token return...OK
+OK
+11:16:25.925527:  Parsing token print...OK
+11:16:25.926338:  Parsing token )...OK
+
+11:16:25.927183:  AST: [None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:16:25.927589:  Generating code...
+11:16:25.927948:  Python code:
+
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+
+
+11:16:25.928233:  Executing...
+11:16:29.867808:  Executed successfully.
+
+11:16:29.868618:  Run time: 0:00:03.952978
+11:16:29.869361:  End session 2026-05-28
+---------------------------------------------
