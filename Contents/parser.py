@@ -26,6 +26,8 @@ def parser(lexemes):
                          'int','float','str','bool','type',] 
     defined_variables = [] # so the parser can check for un-initialized variables
 
+    built_in_modules = {'math': 'math.tc'}
+
     #builtin_modules = os.listdir('Modules')
 
     def peek():
@@ -82,7 +84,6 @@ def parser(lexemes):
 
         # module
         elif name == '#':
-            consume('#')
             module = ''
             attribute = None
             while peek() not in line_end_chars + ['.', ',']: module += consume()
@@ -128,9 +129,7 @@ def parser(lexemes):
         
         else:
             expression = name
-            print(peek())
             while peek() not in line_end_chars + ['=','.']: expression += consume()
-            print('test2')
             if peek() == '.': 
                 consume('.')
                 attribute = parse_expression()
@@ -175,34 +174,37 @@ def parser(lexemes):
                 if peek() in line_end_chars : return {'type': 'ReturnStatement', 'arguement': None}
                 else:
                     arguement = parse_expression()
-                    print('test')
                 return {'type': 'ReturnStatement', 'arguement': arguement}
 
-            # get module or sum - REDO
+            # import
             elif token == 'import':
                 consume('import')
                 modules = []
+                module_code = ''
                 while True:
                     if peek() != '#': raise TypeError(f"Expected type Module, got {type(peek())}.")
                     module = parse_expression()
-                    modules.append(module)
+                    with open(f"Contents/Modules/{module['module']}.tc") as x:
+                        module_code += x.read()
+
                     if peek() == ',': consume(',')
                     else: break
-                entries = os.listdir('.')
-                return {'type': 'ImportStatement', 'modules': modules}
+                from lexer import lexer
+                print(module_code)
+                return parser(lexer(module_code))
 
             # define function
             elif token == 'func':
                 consume('func')
                 name = consume()
-                if peek() != '(': raise SyntaxError("Expected bracket '(' after defined function name.")
+                if name in defined_functions: raise NameError(f"Function name {name} cannot be the same as an already defined function.")
+                if peek() != '(': raise SyntaxError(f"Expected bracket '(' after defined function name {name}.")
                 consume('(')
                 arguements = []
                 while peek() != ')': # arguement loop
                     arguements.append(consume())
                     if peek() == ',': consume(',')
-
-                    else: break
+                    else: break # only keeps looping if theres a comma
                 
                 else: arguements = ''
                 if peek() != ')': raise SyntaxError("Expected bracket ')' after function arguements.")
@@ -448,4 +450,8 @@ def parser(lexemes):
     ast = []
     while pos < len(lexemes):
         ast.append(parse_statement())
+        for x in ast:
+            if type(x) == type([]):
+                ast.remove(x)
+                ast = ast + x
     return ast

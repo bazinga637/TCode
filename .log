@@ -1639,3 +1639,2136 @@ print(calc()
 11:16:29.868618:  Run time: 0:00:03.952978
 11:16:29.869361:  End session 2026-05-28
 ---------------------------------------------
+
+10:13:30.783408:  New session: 2026-05-29
+10:13:30.784019:  Compiler Start
+
+10:13:30.784362:  Lexing...
+10:13:30.785438:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'func', 'ceil', '(', 'x', ')', '{', '\n', 'x', '=', '-', 'x', '/', '/', '1', '\n', 'return', 'int', '(', '-', 'x', ')', '\n', '}', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n']
+
+
+10:13:30.785899:  Parsing...
+10:13:30.786346:  Parsing token func...10:13:30.786674:  Parsing token flt...OK
+10:13:30.787262:  Parsing token str...OK
+10:13:30.787690:  Parsing token flt...OK
+10:13:30.788051:  Parsing token flt...OK
+10:13:30.788444:  Parsing token firstnumber...OK
+10:13:30.789064:  Parsing token operator...OK
+10:13:30.789588:  Parsing token secondnumber...OK
+10:13:30.790093:  Parsing token operations...OK
+10:13:30.790655:  Parsing token output...OK
+10:13:30.791293:  Parsing token return...OK
+OK
+10:13:30.792592:  Parsing token print...OK
+10:13:30.793536:  Parsing token )...OK
+10:13:30.794536:  Parsing token func...10:13:30.795007:  Parsing token x...OK
+10:13:30.796065:  Parsing token return...OK
+OK
+10:13:30.797108:  Parsing token print...OK
+10:13:30.798003:  Parsing token )...OK
+
+10:13:30.799080:  AST: [None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+10:13:30.799587:  Generating code...
+10:13:30.800100:  Python code:
+
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+def ceil(x):
+    x = -x//1
+    return int(-x)
+print(ceil(1.1)
+)
+
+
+10:13:30.800585:  Executing...
+10:13:37.326086:  Executed successfully.
+
+10:13:37.326928:  Run time: 0:00:06.543476
+10:13:37.327438:  End session 2026-05-29
+---------------------------------------------
+
+10:14:10.345656:  New session: 2026-05-29
+10:14:10.346174:  Compiler Start
+
+10:14:10.346492:  Lexing...
+10:14:10.347159:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'func', 'ceil', '(', 'x', ')', '{', '\n', 'x', '=', '-', 'x', '/', '/', '1', '\n', 'return', 'int', '(', '-', 'x', ')', '\n', '}', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n']
+
+
+10:14:10.347461:  Parsing...
+10:14:10.347822:  Parsing token func...10:14:10.348190:  Parsing token flt...OK
+10:14:10.348634:  Parsing token str...OK
+10:14:10.349093:  Parsing token flt...OK
+10:14:10.349606:  Parsing token flt...OK
+10:14:10.350039:  Parsing token firstnumber...OK
+10:14:10.350580:  Parsing token operator...OK
+10:14:10.351072:  Parsing token secondnumber...OK
+10:14:10.351646:  Parsing token operations...OK
+10:14:10.352190:  Parsing token output...OK
+10:14:10.352670:  Parsing token return...OK
+OK
+10:14:10.353388:  Parsing token print...OK
+10:14:10.353803:  Parsing token )...OK
+10:14:10.354157:  Parsing token func...10:14:10.354509:  Parsing token x...OK
+10:14:10.354916:  Parsing token return...OK
+OK
+10:14:10.355494:  Parsing token print...OK
+10:14:10.355891:  Parsing token )...OK
+
+10:14:10.356384:  AST: [None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+10:14:10.356823:  Generating code...
+10:14:10.357254:  Python code:
+
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+def ceil(x):
+    x = -x//1
+    return int(-x)
+print(ceil(1.1)
+)
+
+
+10:14:10.357559:  Executing...
+10:15:23.505155:  New session: 2026-05-29
+10:15:23.505752:  Compiler Start
+
+10:15:23.506195:  Lexing...
+10:15:23.507061:  Lexemes: ['\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'func', 'ceil', '(', 'x', ')', '{', '\n', 'x', '=', '-', 'x', '/', '/', '1', '\n', 'return', 'int', '(', '-', 'x', ')', '\n', '}', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n']
+
+
+10:15:23.507426:  Parsing...
+10:15:23.507753:  Parsing token func...10:15:23.508044:  Parsing token flt...OK
+10:15:23.508437:  Parsing token str...OK
+10:15:23.508808:  Parsing token flt...OK
+10:15:23.509202:  Parsing token flt...OK
+10:15:23.509704:  Parsing token firstnumber...OK
+10:15:23.510495:  Parsing token operator...OK
+10:15:23.511077:  Parsing token secondnumber...OK
+10:15:23.511629:  Parsing token operations...OK
+10:15:23.512236:  Parsing token output...OK
+10:15:23.512898:  Parsing token return...OK
+OK
+10:15:23.513652:  Parsing token print...OK
+10:15:23.514085:  Parsing token )...OK
+10:15:23.514577:  Parsing token func...10:15:23.514943:  Parsing token x...OK
+10:15:23.515343:  Parsing token return...OK
+OK
+10:15:23.515807:  Parsing token print...OK
+10:15:23.516146:  Parsing token )...OK
+
+10:15:23.516541:  AST: [None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+10:15:23.516809:  Generating code...
+10:15:23.517204:  Python code:
+
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+def ceil(x):
+    x = -x//1
+    return int(-x)
+print(ceil(1.1)
+)
+
+
+10:15:23.517481:  Executing...
+10:15:26.090526:  Executed successfully.
+
+10:15:26.091117:  Run time: 0:00:02.585993
+10:15:26.091471:  End session 2026-05-29
+---------------------------------------------
+
+10:19:34.946767:  New session: 2026-05-29
+10:19:34.947399:  Compiler Start
+
+10:19:34.947694:  Lexing...
+10:19:34.948362:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:19:34.948788:  Parsing...
+10:19:34.949133:  Parsing token import...NOT OK
+OK
+
+
+10:19:34.949867:  ERROR: Expected #, got math
+
+10:19:34.950194:  Run time: 0:00:00.003466
+10:19:34.950455:  End session 2026-05-29
+---------------------------------------------
+
+10:20:21.882416:  New session: 2026-05-29
+10:20:21.882951:  Compiler Start
+
+10:20:21.883211:  Lexing...
+10:20:21.883727:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:20:21.883999:  Parsing...
+10:20:21.884291:  Parsing token import...NOT OK
+OK
+
+
+10:20:21.889438:  ERROR: [WinError 3] The system cannot find the path specified: './Modules'
+
+10:20:21.889724:  Run time: 0:00:00.007369
+10:20:21.890018:  End session 2026-05-29
+---------------------------------------------
+
+10:45:29.899084:  New session: 2026-05-29
+10:45:29.899690:  Compiler Start
+
+10:45:29.899997:  Lexing...
+10:45:29.900533:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:45:29.900861:  Parsing...
+10:45:29.901103:  Parsing token import...NOT OK
+OK
+
+
+10:45:29.901884:  ERROR: [Errno 22] Invalid argument: "Modules/{'type': 'ModuleExpression', 'module': 'math', 'attribute': None}.tc"
+
+10:45:29.902209:  Run time: 0:00:00.003141
+10:45:29.903106:  End session 2026-05-29
+---------------------------------------------
+
+10:46:11.034288:  New session: 2026-05-29
+10:46:11.034793:  Compiler Start
+
+10:46:11.035046:  Lexing...
+10:46:11.035599:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:46:11.035874:  Parsing...
+10:46:11.036118:  Parsing token import...NOT OK
+OK
+
+
+10:46:11.036771:  ERROR: [Errno 2] No such file or directory: 'Modules/math.tc'
+
+10:46:11.037023:  Run time: 0:00:00.002797
+10:46:11.037248:  End session 2026-05-29
+---------------------------------------------
+
+10:47:36.504526:  New session: 2026-05-29
+10:47:36.505054:  Compiler Start
+
+10:47:36.505360:  Lexing...
+10:47:36.506199:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:47:36.506613:  Parsing...
+10:47:36.507173:  Parsing token import...NOT OK
+OK
+
+
+10:47:36.507917:  ERROR: [Errno 2] No such file or directory: 'Modules/math.tc'
+
+10:47:36.508165:  Run time: 0:00:00.003700
+10:47:36.508419:  End session 2026-05-29
+---------------------------------------------
+
+10:48:07.837037:  New session: 2026-05-29
+10:48:07.837588:  Compiler Start
+
+10:48:07.837968:  Lexing...
+10:48:07.838539:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:48:07.838932:  Parsing...
+10:48:07.839205:  Parsing token import...10:48:07.851295:  Parsing token func...10:48:07.851695:  Parsing token x...OK
+10:48:07.852241:  Parsing token return...OK
+OK
+OK
+10:48:07.853163:  Parsing token func...10:48:07.853464:  Parsing token flt...OK
+10:48:07.853848:  Parsing token str...OK
+10:48:07.854478:  Parsing token flt...OK
+10:48:07.855035:  Parsing token flt...OK
+10:48:07.855500:  Parsing token firstnumber...OK
+10:48:07.855870:  Parsing token operator...OK
+10:48:07.856224:  Parsing token secondnumber...OK
+10:48:07.856568:  Parsing token operations...OK
+10:48:07.856999:  Parsing token output...OK
+10:48:07.857360:  Parsing token return...OK
+OK
+10:48:07.857812:  Parsing token print...OK
+10:48:07.858144:  Parsing token )...OK
+
+10:48:07.858522:  AST: [[{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}], None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+10:48:07.858789:  Generating code...
+
+10:48:07.859143:  ERROR: 'list' object has no attribute 'get'
+
+10:48:07.859618:  Run time: 0:00:00.022619
+10:48:07.859912:  End session 2026-05-29
+---------------------------------------------
+
+10:48:54.467085:  New session: 2026-05-29
+10:48:54.467595:  Compiler Start
+
+10:48:54.467840:  Lexing...
+10:48:54.468372:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n']
+
+
+10:48:54.468771:  Parsing...
+10:48:54.469120:  Parsing token import...10:48:54.469533:  Parsing token func...10:48:54.469906:  Parsing token x...OK
+10:48:54.470332:  Parsing token return...OK
+OK
+OK
+10:48:54.470942:  Parsing token func...10:48:54.471182:  Parsing token flt...OK
+10:48:54.471532:  Parsing token str...OK
+10:48:54.471880:  Parsing token flt...OK
+10:48:54.472224:  Parsing token flt...OK
+10:48:54.472570:  Parsing token firstnumber...OK
+10:48:54.472927:  Parsing token operator...OK
+10:48:54.473277:  Parsing token secondnumber...OK
+10:48:54.473622:  Parsing token operations...OK
+10:48:54.473972:  Parsing token output...OK
+10:48:54.474312:  Parsing token return...OK
+OK
+10:48:54.474754:  Parsing token print...OK
+10:48:54.475088:  Parsing token )...OK
+
+10:48:54.475459:  AST: [{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+10:48:54.475834:  Generating code...
+10:48:54.476188:  Python code:
+
+def ceil(x):
+    x = -x//1
+    return int(-x)
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+
+
+10:48:54.476445:  Executing...
+10:49:00.065468:  Executed successfully.
+
+10:49:00.066531:  Run time: 0:00:05.599311
+10:49:00.067114:  End session 2026-05-29
+---------------------------------------------
+
+10:53:51.390402:  New session: 2026-05-29
+10:53:51.391104:  Compiler Start
+
+10:53:51.391626:  Lexing...
+10:53:51.392412:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')']
+
+
+10:53:51.392723:  Parsing...
+10:53:51.393069:  Parsing token import...10:53:51.413880:  Parsing token func...10:53:51.414441:  Parsing token x...OK
+10:53:51.415247:  Parsing token return...OK
+OK
+10:53:51.415941:  Parsing token func...10:53:51.416320:  Parsing token return...OK
+NOT OK
+OK
+NOT OK
+OK
+
+
+10:53:51.417534:  ERROR: Expected line-ending character ([';', '\n'])...
+
+10:53:51.417806:  Run time: 0:00:00.027450
+10:53:51.418029:  End session 2026-05-29
+---------------------------------------------
+
+10:54:01.818392:  New session: 2026-05-29
+10:54:01.818997:  Compiler Start
+
+10:54:01.819254:  Lexing...
+10:54:01.819855:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+10:54:01.820209:  Parsing...
+10:54:01.820477:  Parsing token import...10:54:01.820930:  Parsing token func...10:54:01.821213:  Parsing token x...OK
+10:54:01.821791:  Parsing token return...OK
+OK
+10:54:01.822347:  Parsing token func...10:54:01.822597:  Parsing token return...OK
+NOT OK
+OK
+NOT OK
+OK
+
+
+10:54:01.823639:  ERROR: Expected line-ending character ([';', '\n'])...
+
+10:54:01.823878:  Run time: 0:00:00.005555
+10:54:01.824146:  End session 2026-05-29
+---------------------------------------------
+
+10:54:19.530698:  New session: 2026-05-29
+10:54:19.531266:  Compiler Start
+
+10:54:19.531640:  Lexing...
+10:54:19.532227:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+10:54:19.532631:  Parsing...
+10:54:19.533046:  Parsing token import...10:54:19.555785:  Parsing token func...10:54:19.556257:  Parsing token x...OK
+10:54:19.556774:  Parsing token return...OK
+OK
+10:54:19.557300:  Parsing token func...10:54:19.557568:  Parsing token return...OK
+OK
+OK
+10:54:19.558298:  Parsing token func...10:54:19.558535:  Parsing token flt...OK
+10:54:19.558949:  Parsing token str...OK
+10:54:19.559326:  Parsing token flt...OK
+10:54:19.559800:  Parsing token flt...OK
+10:54:19.560209:  Parsing token firstnumber...OK
+10:54:19.560550:  Parsing token operator...OK
+10:54:19.560937:  Parsing token secondnumber...OK
+10:54:19.561302:  Parsing token operations...OK
+10:54:19.561662:  Parsing token output...OK
+10:54:19.562005:  Parsing token return...OK
+OK
+10:54:19.562449:  Parsing token print...OK
+10:54:19.562787:  Parsing token )...OK
+10:54:19.563131:  Parsing token print...OK
+10:54:19.563663:  Parsing token )...OK
+10:54:19.564101:  Parsing token print...OK
+10:54:19.564528:  Parsing token )...OK
+
+10:54:19.565258:  AST: [{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+10:54:19.565598:  Generating code...
+10:54:19.565900:  Python code:
+
+def ceil(x):
+    x = -x//1
+    return int(-x)
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+print(ceil(1.1)
+)
+print(floor(1.1)
+)
+
+
+10:54:19.566171:  Executing...
+
+10:54:25.580445:  ERROR: name 'floor' is not defined
+
+10:54:25.581178:  Run time: 0:00:06.050448
+10:54:25.581601:  End session 2026-05-29
+---------------------------------------------
+
+10:56:18.501756:  New session: 2026-05-29
+10:56:18.502358:  Compiler Start
+
+10:56:18.502629:  Lexing...
+10:56:18.503171:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+10:56:18.503513:  Parsing...
+10:56:18.503764:  Parsing token import...10:56:18.504433:  Parsing token func...10:56:18.504742:  Parsing token x...OK
+10:56:18.505114:  Parsing token return...OK
+OK
+10:56:18.505807:  Parsing token func...10:56:18.506156:  Parsing token return...OK
+OK
+OK
+10:56:18.506928:  Parsing token func...10:56:18.507222:  Parsing token flt...OK
+10:56:18.507764:  Parsing token str...OK
+10:56:18.508162:  Parsing token flt...OK
+10:56:18.508597:  Parsing token flt...OK
+10:56:18.508979:  Parsing token firstnumber...OK
+10:56:18.509357:  Parsing token operator...OK
+10:56:18.509706:  Parsing token secondnumber...OK
+10:56:18.510058:  Parsing token operations...OK
+10:56:18.510413:  Parsing token output...OK
+10:56:18.510752:  Parsing token return...OK
+OK
+10:56:18.511433:  Parsing token print...OK
+10:56:18.512054:  Parsing token )...OK
+10:56:18.512417:  Parsing token print...OK
+10:56:18.512800:  Parsing token )...OK
+10:56:18.513138:  Parsing token print...OK
+10:56:18.513590:  Parsing token )...OK
+
+10:56:18.514044:  AST: [{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+10:56:18.514351:  Generating code...
+10:56:18.514734:  Python code:
+
+def ceil(x):
+    x = -x//1
+    return int(-x)
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+print(ceil(1.1)
+)
+print(floor(1.1)
+)
+
+
+10:56:18.515031:  Executing...
+
+10:56:26.660086:  ERROR: name 'floor' is not defined
+
+10:56:26.660627:  Run time: 0:00:08.158859
+10:56:26.661047:  End session 2026-05-29
+---------------------------------------------
+
+10:57:25.497421:  New session: 2026-05-29
+10:57:25.497979:  Compiler Start
+
+10:57:25.498249:  Lexing...
+10:57:25.498798:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+10:57:25.499060:  Parsing...
+10:57:25.499324:  Parsing token import...10:57:25.499909:  Parsing token func...10:57:25.500178:  Parsing token x...OK
+10:57:25.500558:  Parsing token return...OK
+OK
+10:57:25.501055:  Parsing token func...10:57:25.501303:  Parsing token return...OK
+OK
+OK
+10:57:25.501956:  Parsing token func...10:57:25.502218:  Parsing token flt...OK
+10:57:25.502616:  Parsing token str...OK
+10:57:25.502955:  Parsing token flt...OK
+10:57:25.503358:  Parsing token flt...OK
+10:57:25.503696:  Parsing token firstnumber...OK
+10:57:25.504052:  Parsing token operator...OK
+10:57:25.504417:  Parsing token secondnumber...OK
+10:57:25.504764:  Parsing token operations...OK
+10:57:25.505110:  Parsing token output...OK
+10:57:25.505625:  Parsing token return...OK
+OK
+10:57:25.506323:  Parsing token print...OK
+10:57:25.506679:  Parsing token )...OK
+10:57:25.507045:  Parsing token print...OK
+10:57:25.507395:  Parsing token )...OK
+10:57:25.507741:  Parsing token print...OK
+10:57:25.508092:  Parsing token )...OK
+
+10:57:25.508492:  AST: [[{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}], None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+10:57:25.508905:  Generating code...
+
+10:57:25.509394:  ERROR: 'list' object has no attribute 'get'
+
+10:57:25.509840:  Run time: 0:00:00.012435
+10:57:25.510184:  End session 2026-05-29
+---------------------------------------------
+
+10:59:38.250952:  New session: 2026-05-29
+10:59:38.251475:  Compiler Start
+
+10:59:38.251766:  Lexing...
+10:59:38.252312:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+10:59:38.252596:  Parsing...
+10:59:38.252905:  Parsing token import...10:59:38.253607:  Parsing token func...10:59:38.253912:  Parsing token x...OK
+10:59:38.254299:  Parsing token return...OK
+OK
+10:59:38.254778:  Parsing token func...10:59:38.255014:  Parsing token return...OK
+OK
+OK
+10:59:38.255782:  Parsing token func...10:59:38.256064:  Parsing token flt...OK
+10:59:38.256473:  Parsing token str...OK
+10:59:38.256870:  Parsing token flt...OK
+10:59:38.257325:  Parsing token flt...OK
+10:59:38.261093:  Parsing token firstnumber...OK
+10:59:38.261470:  Parsing token operator...OK
+10:59:38.262048:  Parsing token secondnumber...OK
+10:59:38.262501:  Parsing token operations...OK
+10:59:38.262888:  Parsing token output...OK
+10:59:38.263245:  Parsing token return...OK
+OK
+10:59:38.263734:  Parsing token print...OK
+10:59:38.264210:  Parsing token )...OK
+10:59:38.264607:  Parsing token print...OK
+10:59:38.265022:  Parsing token )...OK
+10:59:38.265552:  Parsing token print...OK
+10:59:38.265934:  Parsing token )...OK
+
+
+10:59:38.266405:  ERROR: sequence item 0: expected str instance, list found
+
+10:59:38.266650:  Run time: 0:00:00.015763
+10:59:38.266886:  End session 2026-05-29
+---------------------------------------------
+
+11:00:34.547852:  New session: 2026-05-29
+11:00:34.548389:  Compiler Start
+
+11:00:34.548658:  Lexing...
+11:00:34.549203:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:00:34.549474:  Parsing...
+11:00:34.549740:  Parsing token import...11:00:34.550380:  Parsing token func...11:00:34.550707:  Parsing token x...OK
+11:00:34.551128:  Parsing token return...OK
+OK
+11:00:34.551630:  Parsing token func...11:00:34.551865:  Parsing token return...OK
+OK
+NOT OK
+OK
+
+
+11:00:34.552755:  ERROR: sequence item 0: expected str instance, dict found
+
+11:00:34.553129:  Run time: 0:00:00.005294
+11:00:34.553425:  End session 2026-05-29
+---------------------------------------------
+
+11:06:00.552727:  New session: 2026-05-29
+11:06:00.553309:  Compiler Start
+
+11:06:00.553591:  Lexing...
+11:06:00.554164:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:06:00.554482:  Parsing...
+11:06:00.554753:  Parsing token import...11:06:00.555435:  Parsing token func...11:06:00.555795:  Parsing token x...OK
+11:06:00.556207:  Parsing token return...OK
+OK
+11:06:00.556705:  Parsing token func...11:06:00.557140:  Parsing token return...OK
+OK
+NOT OK
+OK
+
+
+11:06:00.558358:  ERROR: 'NoneType' object is not iterable
+
+11:06:00.558628:  Run time: 0:00:00.005965
+11:06:00.558938:  End session 2026-05-29
+---------------------------------------------
+
+11:07:51.699511:  New session: 2026-05-29
+11:07:51.700221:  Compiler Start
+
+11:07:51.700538:  Lexing...
+11:07:51.701155:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:07:51.701426:  Parsing...
+11:07:51.701706:  Parsing token import...11:07:51.702314:  Parsing token func...11:07:51.702653:  Parsing token x...OK
+11:07:51.703036:  Parsing token return...OK
+OK
+11:07:51.703527:  Parsing token func...11:07:51.703959:  Parsing token return...OK
+OK
+NOT OK
+OK
+
+
+11:07:51.705019:  ERROR: can only concatenate list (not "dict") to list
+
+11:07:51.705259:  Run time: 0:00:00.005829
+11:07:51.705511:  End session 2026-05-29
+---------------------------------------------
+
+11:08:12.086745:  New session: 2026-05-29
+11:08:12.087300:  Compiler Start
+
+11:08:12.087587:  Lexing...
+11:08:12.088231:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:08:12.088690:  Parsing...
+11:08:12.089012:  Parsing token import...11:08:12.089677:  Parsing token func...11:08:12.090096:  Parsing token x...OK
+11:08:12.090535:  Parsing token return...OK
+OK
+11:08:12.091172:  Parsing token func...11:08:12.091431:  Parsing token return...OK
+OK
+NOT OK
+OK
+
+
+11:08:12.092415:  ERROR: can only concatenate list (not "dict") to list
+
+11:08:12.092680:  Run time: 0:00:00.005998
+11:08:12.092904:  End session 2026-05-29
+---------------------------------------------
+
+11:08:56.004592:  New session: 2026-05-29
+11:08:56.005114:  Compiler Start
+
+11:08:56.005380:  Lexing...
+11:08:56.006074:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:08:56.006441:  Parsing...
+11:08:56.006709:  Parsing token import...11:08:56.007338:  Parsing token func...11:08:56.007676:  Parsing token x...OK
+11:08:56.008222:  Parsing token return...OK
+OK
+11:08:56.008794:  Parsing token func...11:08:56.009160:  Parsing token return...OK
+OK
+OK
+11:08:56.009935:  Parsing token func...11:08:56.010301:  Parsing token flt...OK
+11:08:56.010739:  Parsing token str...OK
+11:08:56.011125:  Parsing token flt...OK
+11:08:56.011487:  Parsing token flt...OK
+11:08:56.011873:  Parsing token firstnumber...OK
+11:08:56.012376:  Parsing token operator...OK
+11:08:56.012791:  Parsing token secondnumber...OK
+11:08:56.013202:  Parsing token operations...OK
+11:08:56.013773:  Parsing token output...OK
+11:08:56.014373:  Parsing token return...OK
+OK
+11:08:56.014964:  Parsing token print...OK
+11:08:56.015364:  Parsing token )...OK
+11:08:56.015755:  Parsing token print...OK
+11:08:56.016274:  Parsing token )...OK
+11:08:56.016722:  Parsing token print...OK
+11:08:56.017143:  Parsing token )...OK
+
+11:08:56.018015:  AST: {'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}
+
+11:08:56.018324:  Generating code...
+
+11:08:56.018685:  ERROR: 'str' object has no attribute 'get'
+
+11:08:56.018930:  Run time: 0:00:00.014403
+11:08:56.019167:  End session 2026-05-29
+---------------------------------------------
+
+11:09:41.720623:  New session: 2026-05-29
+11:09:41.721236:  Compiler Start
+
+11:09:41.721555:  Lexing...
+11:09:41.722152:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:09:41.722548:  Parsing...
+11:09:41.722950:  Parsing token import...11:09:41.723573:  Parsing token func...11:09:41.724011:  Parsing token x...OK
+11:09:41.724526:  Parsing token return...OK
+OK
+11:09:41.725133:  Parsing token func...11:09:41.725385:  Parsing token return...OK
+OK
+OK
+11:09:41.726098:  Parsing token func...11:09:41.726356:  Parsing token flt...OK
+11:09:41.726822:  Parsing token str...OK
+11:09:41.727224:  Parsing token flt...OK
+11:09:41.727695:  Parsing token flt...OK
+11:09:41.728419:  Parsing token firstnumber...OK
+11:09:41.728893:  Parsing token operator...OK
+11:09:41.729456:  Parsing token secondnumber...OK
+11:09:41.729885:  Parsing token operations...OK
+11:09:41.730289:  Parsing token output...OK
+11:09:41.730778:  Parsing token return...OK
+OK
+11:09:41.731289:  Parsing token print...OK
+11:09:41.731669:  Parsing token )...OK
+11:09:41.732008:  Parsing token print...OK
+11:09:41.732367:  Parsing token )...OK
+11:09:41.732818:  Parsing token print...OK
+11:09:41.733343:  Parsing token )...OK
+
+11:09:41.734088:  AST: None
+
+11:09:41.734431:  Generating code...
+
+11:09:41.734886:  ERROR: 'NoneType' object is not iterable
+
+11:09:41.735137:  Run time: 0:00:00.014580
+11:09:41.735372:  End session 2026-05-29
+---------------------------------------------
+
+11:10:01.208102:  New session: 2026-05-29
+11:10:01.209245:  Compiler Start
+
+11:10:01.209778:  Lexing...
+11:10:01.211225:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:10:01.211537:  Parsing...
+11:10:01.211802:  Parsing token import...11:10:01.212440:  Parsing token func...11:10:01.212756:  Parsing token x...OK
+11:10:01.213337:  Parsing token return...OK
+OK
+11:10:01.213884:  Parsing token func...11:10:01.214157:  Parsing token return...OK
+OK
+OK
+11:10:01.214981:  Parsing token func...11:10:01.215221:  Parsing token flt...OK
+11:10:01.215589:  Parsing token str...OK
+11:10:01.216116:  Parsing token flt...OK
+11:10:01.216642:  Parsing token flt...OK
+11:10:01.217128:  Parsing token firstnumber...OK
+11:10:01.217576:  Parsing token operator...OK
+11:10:01.217965:  Parsing token secondnumber...OK
+11:10:01.218329:  Parsing token operations...OK
+11:10:01.218947:  Parsing token output...OK
+11:10:01.219494:  Parsing token return...OK
+OK
+11:10:01.220177:  Parsing token print...OK
+11:10:01.220573:  Parsing token )...OK
+11:10:01.221152:  Parsing token print...OK
+11:10:01.221577:  Parsing token )...OK
+11:10:01.221981:  Parsing token print...OK
+11:10:01.222463:  Parsing token )...OK
+
+11:10:01.223243:  AST: [[{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}], None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:10:01.223581:  Generating code...
+
+11:10:01.224318:  ERROR: 'list' object has no attribute 'get'
+
+11:10:01.224675:  Run time: 0:00:00.016628
+11:10:01.224950:  End session 2026-05-29
+---------------------------------------------
+
+11:10:20.805269:  New session: 2026-05-29
+11:10:20.805764:  Compiler Start
+
+11:10:20.806027:  Lexing...
+11:10:20.806682:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:10:20.807030:  Parsing...
+11:10:20.807319:  Parsing token import...11:10:20.807995:  Parsing token func...11:10:20.808378:  Parsing token x...OK
+11:10:20.808809:  Parsing token return...OK
+OK
+11:10:20.809384:  Parsing token func...11:10:20.809872:  Parsing token return...OK
+OK
+OK
+11:10:20.810852:  Parsing token func...11:10:20.811404:  Parsing token flt...OK
+11:10:20.811840:  Parsing token str...OK
+11:10:20.812188:  Parsing token flt...OK
+11:10:20.812542:  Parsing token flt...OK
+11:10:20.813092:  Parsing token firstnumber...OK
+11:10:20.813476:  Parsing token operator...OK
+11:10:20.813849:  Parsing token secondnumber...OK
+11:10:20.814346:  Parsing token operations...OK
+11:10:20.814739:  Parsing token output...OK
+11:10:20.815274:  Parsing token return...OK
+OK
+11:10:20.815902:  Parsing token print...OK
+11:10:20.816734:  Parsing token )...OK
+11:10:20.817492:  Parsing token print...OK
+11:10:20.818033:  Parsing token )...OK
+11:10:20.818378:  Parsing token print...OK
+11:10:20.818734:  Parsing token )...OK
+
+11:10:20.819579:  AST: {'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}
+
+11:10:20.819901:  Generating code...
+
+11:10:20.820311:  ERROR: 'str' object has no attribute 'get'
+
+11:10:20.820656:  Run time: 0:00:00.015422
+11:10:20.821088:  End session 2026-05-29
+---------------------------------------------
+
+11:10:38.898761:  New session: 2026-05-29
+11:10:38.899271:  Compiler Start
+
+11:10:38.899665:  Lexing...
+11:10:38.900868:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:10:38.901242:  Parsing...
+11:10:38.901492:  Parsing token import...11:10:38.902146:  Parsing token func...11:10:38.902468:  Parsing token x...OK
+11:10:38.902873:  Parsing token return...OK
+OK
+11:10:38.903454:  Parsing token func...11:10:38.903705:  Parsing token return...OK
+OK
+OK
+11:10:38.904463:  Parsing token func...11:10:38.904716:  Parsing token flt...OK
+11:10:38.905330:  Parsing token str...OK
+11:10:38.905727:  Parsing token flt...OK
+11:10:38.906102:  Parsing token flt...OK
+11:10:38.906525:  Parsing token firstnumber...OK
+11:10:38.907024:  Parsing token operator...OK
+11:10:38.907415:  Parsing token secondnumber...OK
+11:10:38.907777:  Parsing token operations...OK
+11:10:38.908157:  Parsing token output...OK
+11:10:38.908526:  Parsing token return...OK
+OK
+11:10:38.908987:  Parsing token print...OK
+11:10:38.909522:  Parsing token )...OK
+11:10:38.909905:  Parsing token print...OK
+11:10:38.910322:  Parsing token )...OK
+11:10:38.910716:  Parsing token print...OK
+11:10:38.911064:  Parsing token )...OK
+
+11:10:38.911806:  AST: [[{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}]]
+
+11:10:38.912126:  Generating code...
+
+11:10:38.912623:  ERROR: 'list' object has no attribute 'get'
+
+11:10:38.912910:  Run time: 0:00:00.014204
+11:10:38.913196:  End session 2026-05-29
+---------------------------------------------
+
+11:12:21.343046:  New session: 2026-05-29
+11:12:21.343548:  Compiler Start
+
+11:12:21.343828:  Lexing...
+11:12:21.344365:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:12:21.344667:  Parsing...
+11:12:21.344996:  Parsing token import...11:12:21.345678:  Parsing token func...11:12:21.346045:  Parsing token x...OK
+11:12:21.346522:  Parsing token return...OK
+OK
+11:12:21.347177:  Parsing token func...11:12:21.347426:  Parsing token return...OK
+OK
+OK
+11:12:21.348012:  Parsing token func...11:12:21.348261:  Parsing token flt...OK
+11:12:21.348620:  Parsing token str...OK
+11:12:21.349088:  Parsing token flt...OK
+11:12:21.349548:  Parsing token flt...OK
+11:12:21.349945:  Parsing token firstnumber...OK
+11:12:21.350358:  Parsing token operator...OK
+11:12:21.350821:  Parsing token secondnumber...OK
+11:12:21.351377:  Parsing token operations...OK
+11:12:21.351864:  Parsing token output...OK
+11:12:21.352353:  Parsing token return...OK
+OK
+11:12:21.352841:  Parsing token print...OK
+11:12:21.353204:  Parsing token )...OK
+11:12:21.353716:  Parsing token print...OK
+11:12:21.354127:  Parsing token )...OK
+11:12:21.354584:  Parsing token print...OK
+11:12:21.354975:  Parsing token )...OK
+
+11:12:21.355513:  AST: [[{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}], None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:12:21.355837:  Generating code...
+
+11:12:21.356223:  ERROR: 'NoneType' object is not iterable
+
+11:12:21.356463:  Run time: 0:00:00.013482
+11:12:21.356689:  End session 2026-05-29
+---------------------------------------------
+
+11:12:57.638269:  New session: 2026-05-29
+11:12:57.638813:  Compiler Start
+
+11:12:57.639054:  Lexing...
+11:12:57.639650:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:12:57.639961:  Parsing...
+11:12:57.640245:  Parsing token import...11:12:57.640946:  Parsing token func...11:12:57.641217:  Parsing token x...OK
+11:12:57.641660:  Parsing token return...OK
+OK
+11:12:57.642151:  Parsing token func...11:12:57.642389:  Parsing token return...OK
+OK
+OK
+11:12:57.643001:  Parsing token func...11:12:57.643243:  Parsing token flt...OK
+11:12:57.643604:  Parsing token str...OK
+11:12:57.644044:  Parsing token flt...OK
+11:12:57.644415:  Parsing token flt...OK
+11:12:57.644877:  Parsing token firstnumber...OK
+11:12:57.645368:  Parsing token operator...OK
+11:12:57.645841:  Parsing token secondnumber...OK
+11:12:57.646243:  Parsing token operations...OK
+11:12:57.646608:  Parsing token output...OK
+11:12:57.647118:  Parsing token return...OK
+OK
+11:12:57.647739:  Parsing token print...OK
+11:12:57.648134:  Parsing token )...OK
+11:12:57.648497:  Parsing token print...OK
+11:12:57.648867:  Parsing token )...OK
+11:12:57.649375:  Parsing token print...OK
+11:12:57.649785:  Parsing token )...OK
+
+11:12:57.650234:  AST: [[{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}], None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:12:57.650496:  Generating code...
+
+11:12:57.651028:  ERROR: can only concatenate list (not "NoneType") to list
+
+11:12:57.651313:  Run time: 0:00:00.013108
+11:12:57.651563:  End session 2026-05-29
+---------------------------------------------
+
+11:13:17.413803:  New session: 2026-05-29
+11:13:17.414300:  Compiler Start
+
+11:13:17.414556:  Lexing...
+11:13:17.415102:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:13:17.415479:  Parsing...
+11:13:17.415731:  Parsing token import...11:13:17.416318:  Parsing token func...11:13:17.416851:  Parsing token x...OK
+11:13:17.417422:  Parsing token return...OK
+OK
+11:13:17.418054:  Parsing token func...11:13:17.418300:  Parsing token return...OK
+OK
+OK
+11:13:17.418880:  Parsing token func...11:13:17.419210:  Parsing token flt...OK
+11:13:17.419636:  Parsing token str...OK
+11:13:17.419986:  Parsing token flt...OK
+11:13:17.420348:  Parsing token flt...OK
+11:13:17.420712:  Parsing token firstnumber...OK
+11:13:17.421060:  Parsing token operator...OK
+11:13:17.421406:  Parsing token secondnumber...OK
+11:13:17.421862:  Parsing token operations...OK
+11:13:17.422484:  Parsing token output...OK
+11:13:17.422964:  Parsing token return...OK
+OK
+11:13:17.423475:  Parsing token print...OK
+11:13:17.423825:  Parsing token )...OK
+11:13:17.424259:  Parsing token print...OK
+11:13:17.424769:  Parsing token )...OK
+11:13:17.425305:  Parsing token print...OK
+11:13:17.425691:  Parsing token )...OK
+
+11:13:17.426117:  AST: [[{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}], None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:13:17.426412:  Generating code...
+
+11:13:17.426767:  ERROR: can only concatenate list (not "NoneType") to list
+
+11:13:17.427004:  Run time: 0:00:00.013270
+11:13:17.427224:  End session 2026-05-29
+---------------------------------------------
+
+11:14:00.898390:  New session: 2026-05-29
+11:14:00.899195:  Compiler Start
+
+11:14:00.899477:  Lexing...
+11:14:00.900031:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:14:00.900401:  Parsing...
+11:14:00.900711:  Parsing token import...11:14:00.901374:  Parsing token func...11:14:00.901648:  Parsing token x...OK
+11:14:00.902097:  Parsing token return...OK
+OK
+11:14:00.902821:  Parsing token func...11:14:00.903303:  Parsing token return...OK
+OK
+OK
+11:14:00.903960:  Parsing token func...11:14:00.904200:  Parsing token flt...OK
+11:14:00.904649:  Parsing token str...OK
+11:14:00.905155:  Parsing token flt...OK
+11:14:00.905537:  Parsing token flt...OK
+11:14:00.905886:  Parsing token firstnumber...OK
+11:14:00.906237:  Parsing token operator...OK
+11:14:00.906577:  Parsing token secondnumber...OK
+11:14:00.907306:  Parsing token operations...OK
+11:14:00.907831:  Parsing token output...OK
+11:14:00.908267:  Parsing token return...OK
+OK
+11:14:00.908762:  Parsing token print...OK
+11:14:00.909362:  Parsing token )...OK
+11:14:00.909806:  Parsing token print...OK
+11:14:00.910383:  Parsing token )...OK
+11:14:00.910763:  Parsing token print...OK
+11:14:00.911212:  Parsing token )...OK
+
+11:14:00.911691:  AST: [[{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}], None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:14:00.911984:  Generating code...
+
+11:14:00.912809:  ERROR: 'list' object has no attribute 'get'
+
+11:14:00.913118:  Run time: 0:00:00.014785
+11:14:00.913615:  End session 2026-05-29
+---------------------------------------------
+
+11:15:07.648989:  New session: 2026-05-29
+11:15:07.649546:  Compiler Start
+
+11:15:07.649793:  Lexing...
+11:15:07.650333:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:15:07.650581:  Parsing...
+11:15:07.650824:  Parsing token import...11:15:07.651392:  Parsing token func...11:15:07.651681:  Parsing token x...OK
+11:15:07.652087:  Parsing token return...OK
+OK
+11:15:07.652595:  Parsing token func...11:15:07.652822:  Parsing token return...OK
+OK
+OK
+11:15:07.653546:  Parsing token func...11:15:07.653854:  Parsing token flt...OK
+11:15:07.654336:  Parsing token str...OK
+11:15:07.654759:  Parsing token flt...OK
+11:15:07.655128:  Parsing token flt...OK
+11:15:07.655495:  Parsing token firstnumber...OK
+11:15:07.655858:  Parsing token operator...OK
+11:15:07.656205:  Parsing token secondnumber...OK
+11:15:07.656555:  Parsing token operations...OK
+11:15:07.657045:  Parsing token output...OK
+11:15:07.657445:  Parsing token return...OK
+OK
+11:15:07.658149:  Parsing token print...OK
+11:15:07.658660:  Parsing token )...OK
+11:15:07.659075:  Parsing token print...OK
+11:15:07.659449:  Parsing token )...OK
+11:15:07.659798:  Parsing token print...OK
+11:15:07.660176:  Parsing token )...OK
+
+11:15:07.660562:  AST: [{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:15:07.660944:  Generating code...
+11:15:07.662384:  Python code:
+
+def ceil(x):
+    x = -x//1
+    return int(-x)
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+print(ceil(1.1)
+)
+print(floor(1.1)
+)
+
+
+11:15:07.662701:  Executing...
+
+11:15:11.580047:  ERROR: name 'floor' is not defined
+
+11:15:11.580729:  Run time: 0:00:03.931681
+11:15:11.581181:  End session 2026-05-29
+---------------------------------------------
+
+11:17:46.502982:  New session: 2026-05-29
+11:17:46.503515:  Compiler Start
+
+11:17:46.503781:  Lexing...
+11:17:46.504322:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:17:46.504765:  Parsing...
+11:17:46.505114:  Parsing token import...11:17:46.505766:  Parsing token func...11:17:46.506098:  Parsing token x...OK
+11:17:46.506503:  Parsing token return...OK
+OK
+11:17:46.506990:  Parsing token func...11:17:46.507220:  Parsing token return...OK
+OK
+OK
+11:17:46.507962:  Parsing token func...11:17:46.508279:  Parsing token flt...OK
+11:17:46.508767:  Parsing token str...OK
+11:17:46.509157:  Parsing token flt...OK
+11:17:46.509534:  Parsing token flt...OK
+11:17:46.509927:  Parsing token firstnumber...OK
+11:17:46.510278:  Parsing token operator...OK
+11:17:46.510742:  Parsing token secondnumber...OK
+11:17:46.511147:  Parsing token operations...OK
+11:17:46.511535:  Parsing token output...OK
+11:17:46.511883:  Parsing token return...OK
+OK
+11:17:46.512479:  Parsing token print...OK
+11:17:46.512848:  Parsing token )...OK
+11:17:46.513242:  Parsing token print...OK
+11:17:46.513608:  Parsing token )...OK
+11:17:46.513986:  Parsing token print...OK
+11:17:46.514369:  Parsing token )...OK
+
+11:17:46.515433:  AST: [{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:17:46.516240:  Generating code...
+11:17:46.516877:  Python code:
+
+def ceil(x):
+    x = -x//1
+    return int(-x)
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+print(ceil(1.1)
+)
+print(floor(1.1)
+)
+
+
+11:17:46.517271:  Executing...
+11:18:49.897429:  New session: 2026-05-29
+11:18:49.898020:  Compiler Start
+
+11:18:49.898308:  Lexing...
+11:18:49.899177:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:18:49.899493:  Parsing...
+11:18:49.899814:  Parsing token import...11:18:49.900401:  Parsing token func...11:18:49.900716:  Parsing token x...OK
+11:18:49.901131:  Parsing token return...OK
+OK
+11:18:49.901666:  Parsing token func...11:18:49.901921:  Parsing token return...OK
+OK
+OK
+11:18:49.902700:  Parsing token func...11:18:49.902977:  Parsing token flt...OK
+11:18:49.903362:  Parsing token str...OK
+11:18:49.903739:  Parsing token flt...OK
+11:18:49.904165:  Parsing token flt...OK
+11:18:49.904542:  Parsing token firstnumber...OK
+11:18:49.905038:  Parsing token operator...OK
+11:18:49.905457:  Parsing token secondnumber...OK
+11:18:49.905877:  Parsing token operations...OK
+11:18:49.906283:  Parsing token output...OK
+11:18:49.906681:  Parsing token return...OK
+OK
+11:18:49.907300:  Parsing token print...OK
+11:18:49.907794:  Parsing token )...OK
+11:18:49.908230:  Parsing token print...OK
+11:18:49.908611:  Parsing token )...OK
+11:18:49.909103:  Parsing token print...OK
+11:18:49.909647:  Parsing token )...OK
+
+11:18:49.910108:  AST: [[{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}], None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:18:49.910449:  Generating code...
+
+11:18:49.910892:  ERROR: 'list' object has no attribute 'get'
+
+11:18:49.911159:  Run time: 0:00:00.013818
+11:18:49.911623:  End session 2026-05-29
+---------------------------------------------
+
+11:22:48.438567:  New session: 2026-05-29
+11:22:48.439069:  Compiler Start
+
+11:22:48.439315:  Lexing...
+11:22:48.439992:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:22:48.440381:  Parsing...
+11:22:48.440695:  Parsing token import...11:22:48.441332:  Parsing token func...11:22:48.441688:  Parsing token x...OK
+11:22:48.442069:  Parsing token return...OK
+OK
+11:22:48.442565:  Parsing token func...11:22:48.442797:  Parsing token return...OK
+OK
+OK
+11:22:48.443469:  Parsing token func...11:22:48.443697:  Parsing token flt...OK
+11:22:48.444121:  Parsing token str...OK
+11:22:48.444455:  Parsing token flt...OK
+11:22:48.444915:  Parsing token flt...OK
+11:22:48.445361:  Parsing token firstnumber...OK
+11:22:48.445860:  Parsing token operator...OK
+11:22:48.446960:  Parsing token secondnumber...OK
+11:22:48.447392:  Parsing token operations...OK
+11:22:48.447882:  Parsing token output...OK
+11:22:48.448503:  Parsing token return...OK
+OK
+11:22:48.449303:  Parsing token print...OK
+11:22:48.449747:  Parsing token )...OK
+11:22:48.450441:  Parsing token print...OK
+11:22:48.450946:  Parsing token )...OK
+11:22:48.451420:  Parsing token print...OK
+11:22:48.452576:  Parsing token )...OK
+
+11:22:48.453758:  AST: [{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}, None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:22:48.454305:  Generating code...
+11:22:48.455025:  Python code:
+
+def ceil(x):
+    x = -x//1
+    return int(-x)
+def floor(x):
+    return int(x//1)
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+print(ceil(1.1)
+)
+print(floor(1.1)
+)
+
+
+11:22:48.455767:  Executing...
+11:22:52.749841:  Executed successfully.
+
+11:22:52.750541:  Run time: 0:00:04.311899
+11:22:52.751097:  End session 2026-05-29
+---------------------------------------------
+
+11:28:21.041295:  New session: 2026-05-29
+11:28:21.041874:  Compiler Start
+
+11:28:21.042271:  Lexing...
+11:28:21.042899:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:28:21.043201:  Parsing...
+11:28:21.043556:  Parsing token import...11:28:21.058227:  Parsing token func...11:28:21.058705:  Parsing token x...OK
+11:28:21.059309:  Parsing token return...OK
+OK
+11:28:21.059864:  Parsing token func...11:28:21.060141:  Parsing token return...OK
+OK
+11:28:21.060767:  Parsing token func...NOT OK
+OK
+NOT OK
+OK
+
+
+11:28:21.061790:  ERROR: Expected line-ending character ([';', '\n'])...
+
+11:28:21.062079:  Run time: 0:00:00.020876
+11:28:21.062410:  End session 2026-05-29
+---------------------------------------------
+
+11:28:33.761486:  New session: 2026-05-29
+11:28:33.762040:  Compiler Start
+
+11:28:33.762303:  Lexing...
+11:28:33.762973:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:28:33.763264:  Parsing...
+11:28:33.763511:  Parsing token import...11:28:33.779719:  Parsing token func...11:28:33.780423:  Parsing token x...OK
+11:28:33.781383:  Parsing token return...OK
+OK
+11:28:33.782003:  Parsing token func...11:28:33.782257:  Parsing token return...OK
+OK
+11:28:33.782757:  Parsing token func...NOT OK
+OK
+NOT OK
+OK
+
+
+11:28:33.783768:  ERROR: Expected line-ending character ([';', '\n'])...
+
+11:28:33.784113:  Run time: 0:00:00.022658
+11:28:33.784495:  End session 2026-05-29
+---------------------------------------------
+
+11:29:05.486369:  New session: 2026-05-29
+11:29:05.486956:  Compiler Start
+
+11:29:05.487209:  Lexing...
+11:29:05.487883:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:29:05.488211:  Parsing...
+11:29:05.488465:  Parsing token import...11:29:05.500600:  Parsing token func...11:29:05.501033:  Parsing token x...OK
+11:29:05.501522:  Parsing token return...OK
+OK
+11:29:05.502133:  Parsing token func...11:29:05.502518:  Parsing token return...OK
+OK
+11:29:05.503202:  Parsing token func...NOT OK
+OK
+NOT OK
+OK
+
+
+11:29:05.504193:  ERROR: Expected line-ending character ([';', '\n'])...
+
+11:29:05.504440:  Run time: 0:00:00.018131
+11:29:05.504672:  End session 2026-05-29
+---------------------------------------------
+
+11:29:37.385206:  New session: 2026-05-29
+11:29:37.385750:  Compiler Start
+
+11:29:37.386011:  Lexing...
+11:29:37.386554:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:29:37.386818:  Parsing...
+11:29:37.387060:  Parsing token import...11:29:37.404434:  Parsing token func...11:29:37.404842:  Parsing token x...OK
+11:29:37.405297:  Parsing token return...OK
+OK
+11:29:37.405939:  Parsing token func...11:29:37.406185:  Parsing token return...OK
+OK
+11:29:37.406663:  Parsing token func...NOT OK
+OK
+NOT OK
+OK
+
+
+11:29:37.407797:  ERROR: Expected line-ending character ([';', '\n'])...
+
+11:29:37.408138:  Run time: 0:00:00.022996
+11:29:37.408438:  End session 2026-05-29
+---------------------------------------------
+
+11:29:53.166367:  New session: 2026-05-29
+11:29:53.166908:  Compiler Start
+
+11:29:53.167149:  Lexing...
+11:29:53.167770:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:29:53.168139:  Parsing...
+11:29:53.168514:  Parsing token import...11:29:53.183845:  Parsing token func...11:29:53.184353:  Parsing token x...OK
+11:29:53.184937:  Parsing token return...OK
+OK
+11:29:53.185598:  Parsing token func...11:29:53.185892:  Parsing token return...OK
+OK
+11:29:53.186471:  Parsing token func...NOT OK
+OK
+NOT OK
+OK
+
+
+11:29:53.187347:  ERROR: Expected line-ending character ([';', '\n'])...
+
+11:29:53.187586:  Run time: 0:00:00.021284
+11:29:53.187813:  End session 2026-05-29
+---------------------------------------------
+
+11:30:19.706702:  New session: 2026-05-29
+11:30:19.707372:  Compiler Start
+
+11:30:19.707781:  Lexing...
+11:30:19.708413:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:30:19.708758:  Parsing...
+11:30:19.709020:  Parsing token import...11:30:19.725715:  Parsing token func...11:30:19.726204:  Parsing token x...OK
+11:30:19.726654:  Parsing token return...OK
+OK
+11:30:19.727227:  Parsing token func...11:30:19.727487:  Parsing token return...OK
+OK
+11:30:19.727965:  Parsing token func...11:30:19.728224:  Parsing token if...11:30:19.728504:  Parsing token return...OK
+OK
+11:30:19.728955:  Parsing token return...OK
+OK
+11:30:19.729469:  Parsing token func...11:30:19.729705:  Parsing token max...OK
+11:30:19.730092:  Parsing token for...11:30:19.730370:  Parsing token {...OK
+NOT OK
+OK
+NOT OK
+OK
+NOT OK
+OK
+
+
+11:30:19.731576:  ERROR: Expected line-ending character ([';', '\n'])...
+
+11:30:19.731818:  Run time: 0:00:00.025193
+11:30:19.732046:  End session 2026-05-29
+---------------------------------------------
+
+11:30:32.087013:  New session: 2026-05-29
+11:30:32.087530:  Compiler Start
+
+11:30:32.087827:  Lexing...
+11:30:32.088616:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:30:32.088906:  Parsing...
+11:30:32.089162:  Parsing token import...11:30:32.103543:  Parsing token func...11:30:32.103919:  Parsing token x...OK
+11:30:32.104325:  Parsing token return...OK
+OK
+11:30:32.105241:  Parsing token func...11:30:32.105517:  Parsing token return...OK
+OK
+11:30:32.106178:  Parsing token func...11:30:32.106510:  Parsing token if...11:30:32.106922:  Parsing token return...OK
+OK
+11:30:32.107602:  Parsing token return...OK
+OK
+11:30:32.108331:  Parsing token func...11:30:32.108852:  Parsing token max...OK
+11:30:32.109577:  Parsing token for...11:30:32.110005:  Parsing token {...OK
+NOT OK
+OK
+NOT OK
+OK
+NOT OK
+OK
+
+
+11:30:32.112341:  ERROR: Expected line-ending character ([';', '\n'])...
+
+11:30:32.112910:  Run time: 0:00:00.025895
+11:30:32.113306:  End session 2026-05-29
+---------------------------------------------
+
+11:30:44.536256:  New session: 2026-05-29
+11:30:44.537097:  Compiler Start
+
+11:30:44.537569:  Lexing...
+11:30:44.538563:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n']
+
+
+11:30:44.538999:  Parsing...
+11:30:44.539482:  Parsing token import...11:30:44.553248:  Parsing token func...11:30:44.553639:  Parsing token x...OK
+11:30:44.554055:  Parsing token return...OK
+OK
+11:30:44.554709:  Parsing token func...11:30:44.554988:  Parsing token return...OK
+OK
+11:30:44.555646:  Parsing token func...11:30:44.555885:  Parsing token if...11:30:44.556123:  Parsing token return...OK
+OK
+11:30:44.556776:  Parsing token return...OK
+OK
+11:30:44.557358:  Parsing token func...11:30:44.557670:  Parsing token max...OK
+11:30:44.558199:  Parsing token for...11:30:44.558580:  Parsing token if...11:30:44.558934:  Parsing token max...OK
+OK
+OK
+11:30:44.559705:  Parsing token return...OK
+OK
+OK
+11:30:44.560384:  Parsing token func...11:30:44.560631:  Parsing token flt...OK
+11:30:44.561059:  Parsing token str...OK
+11:30:44.561531:  Parsing token flt...OK
+11:30:44.561915:  Parsing token flt...OK
+11:30:44.562312:  Parsing token firstnumber...OK
+11:30:44.562674:  Parsing token operator...OK
+11:30:44.563107:  Parsing token secondnumber...OK
+11:30:44.563493:  Parsing token operations...OK
+11:30:44.563882:  Parsing token output...OK
+11:30:44.564261:  Parsing token return...OK
+OK
+11:30:44.564800:  Parsing token print...OK
+11:30:44.565396:  Parsing token )...OK
+11:30:44.565893:  Parsing token print...OK
+11:30:44.566297:  Parsing token )...OK
+11:30:44.566859:  Parsing token print...OK
+11:30:44.567333:  Parsing token )...OK
+
+11:30:44.568240:  AST: [{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'abs', 'arguements': ['x'], 'body': [None, {'type': 'IfStatement', 'condition': 'x<0', 'body': [{'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': '-x', 'attribute': None}}]}, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'x', 'attribute': None}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'max', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'max', 'body': {'type': 'VariableExpression', 'expression': 'x[0]', 'attribute': None}}, None, {'type': 'ForStatement', 'loopVariable': 'n', 'sequence': 'x', 'body': [None, {'type': 'IfStatement', 'condition': 'n>max', 'body': [{'type': 'AssignmentStatement', 'name': 'max', 'body': {'type': 'VariableExpression', 'expression': 'x', 'attribute': None}}]}]}, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'max', 'attribute': None}}, None]}, None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:30:44.568829:  Generating code...
+11:30:44.569613:  Python code:
+
+def ceil(x):
+    x = -x//1
+    return int(-x)
+def floor(x):
+    return int(x//1)
+def abs(x):
+    if x<0:
+        return -x
+    return x
+def max(x):
+    max = x[0]
+    for n in x:
+        if n>max:
+            max = x
+    return max
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+print(ceil(1.1)
+)
+print(floor(1.1)
+)
+
+
+11:30:44.570159:  Executing...
+11:30:50.632987:  Executed successfully.
+
+11:30:50.633677:  Run time: 0:00:06.097480
+11:30:50.634117:  End session 2026-05-29
+---------------------------------------------
+
+11:32:20.725573:  New session: 2026-05-29
+11:32:20.726929:  Compiler Start
+
+11:32:20.727685:  Lexing...
+11:32:20.728521:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'max', '(', '[', '1', ',', '9', ',', '2', ',', '3', ']', ')', ')', '\n']
+
+
+11:32:20.728811:  Parsing...
+11:32:20.729104:  Parsing token import...11:32:20.729892:  Parsing token func...11:32:20.730221:  Parsing token x...OK
+11:32:20.730649:  Parsing token return...OK
+OK
+11:32:20.731145:  Parsing token func...11:32:20.731405:  Parsing token return...OK
+OK
+11:32:20.731864:  Parsing token func...11:32:20.732097:  Parsing token if...11:32:20.732325:  Parsing token return...OK
+OK
+11:32:20.732836:  Parsing token return...OK
+OK
+11:32:20.733479:  Parsing token func...11:32:20.733736:  Parsing token max...OK
+11:32:20.734136:  Parsing token for...11:32:20.734429:  Parsing token if...11:32:20.734829:  Parsing token max...OK
+OK
+OK
+11:32:20.735731:  Parsing token return...OK
+OK
+OK
+11:32:20.736470:  Parsing token func...11:32:20.736837:  Parsing token flt...OK
+11:32:20.737301:  Parsing token str...OK
+11:32:20.737675:  Parsing token flt...OK
+11:32:20.738039:  Parsing token flt...OK
+11:32:20.738538:  Parsing token firstnumber...OK
+11:32:20.738989:  Parsing token operator...OK
+11:32:20.739567:  Parsing token secondnumber...OK
+11:32:20.740062:  Parsing token operations...OK
+11:32:20.740478:  Parsing token output...OK
+11:32:20.740855:  Parsing token return...OK
+OK
+11:32:20.741328:  Parsing token print...OK
+11:32:20.741699:  Parsing token )...OK
+11:32:20.742056:  Parsing token print...OK
+11:32:20.742525:  Parsing token )...OK
+11:32:20.742971:  Parsing token print...OK
+11:32:20.743409:  Parsing token )...OK
+11:32:20.744093:  Parsing token print...OK
+11:32:20.744552:  Parsing token )...OK
+
+11:32:20.745026:  AST: [{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'abs', 'arguements': ['x'], 'body': [None, {'type': 'IfStatement', 'condition': 'x<0', 'body': [{'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': '-x', 'attribute': None}}]}, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'x', 'attribute': None}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'max', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'max', 'body': {'type': 'VariableExpression', 'expression': 'x[0]', 'attribute': None}}, None, {'type': 'ForStatement', 'loopVariable': 'n', 'sequence': 'x', 'body': [None, {'type': 'IfStatement', 'condition': 'n>max', 'body': [{'type': 'AssignmentStatement', 'name': 'max', 'body': {'type': 'VariableExpression', 'expression': 'x', 'attribute': None}}]}]}, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'max', 'attribute': None}}, None]}, None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['max([1', '9', '2', '3]']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:32:20.745336:  Generating code...
+11:32:20.745812:  Python code:
+
+def ceil(x):
+    x = -x//1
+    return int(-x)
+def floor(x):
+    return int(x//1)
+def abs(x):
+    if x<0:
+        return -x
+    return x
+def max(x):
+    max = x[0]
+    for n in x:
+        if n>max:
+            max = x
+    return max
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+print(ceil(1.1)
+)
+print(floor(1.1)
+)
+print(max([1, 9, 2, 3])
+)
+
+
+11:32:20.746138:  Executing...
+
+11:32:23.057123:  ERROR: '>' not supported between instances of 'int' and 'list'
+
+11:32:23.057691:  Run time: 0:00:02.332074
+11:32:23.058252:  End session 2026-05-29
+---------------------------------------------
+
+11:34:04.106202:  New session: 2026-05-29
+11:34:04.106840:  Compiler Start
+
+11:34:04.107224:  Lexing...
+11:34:04.107868:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'max', '(', '[', '1', ',', '9', ',', '2', ',', '3', ']', ')', ')', '\n']
+
+
+11:34:04.108156:  Parsing...
+11:34:04.108418:  Parsing token import...11:34:04.130438:  Parsing token func...11:34:04.131326:  Parsing token x...OK
+11:34:04.131812:  Parsing token return...OK
+OK
+11:34:04.132322:  Parsing token func...11:34:04.132562:  Parsing token return...OK
+OK
+11:34:04.133093:  Parsing token func...11:34:04.133325:  Parsing token if...11:34:04.133560:  Parsing token return...OK
+OK
+11:34:04.134075:  Parsing token return...OK
+OK
+11:34:04.134696:  Parsing token func...11:34:04.134986:  Parsing token m...OK
+11:34:04.135650:  Parsing token for...11:34:04.136004:  Parsing token if...11:34:04.136313:  Parsing token m...OK
+OK
+OK
+11:34:04.137067:  Parsing token return...OK
+OK
+OK
+11:34:04.137907:  Parsing token func...11:34:04.138216:  Parsing token flt...OK
+11:34:04.138603:  Parsing token str...OK
+11:34:04.138943:  Parsing token flt...OK
+11:34:04.139322:  Parsing token flt...OK
+11:34:04.139666:  Parsing token firstnumber...OK
+11:34:04.140020:  Parsing token operator...OK
+11:34:04.140367:  Parsing token secondnumber...OK
+11:34:04.140716:  Parsing token operations...OK
+11:34:04.141155:  Parsing token output...OK
+11:34:04.141819:  Parsing token return...OK
+OK
+11:34:04.142716:  Parsing token print...OK
+11:34:04.143242:  Parsing token )...OK
+11:34:04.143799:  Parsing token print...OK
+11:34:04.144232:  Parsing token )...OK
+11:34:04.144734:  Parsing token print...OK
+11:34:04.145095:  Parsing token )...OK
+11:34:04.145443:  Parsing token print...OK
+11:34:04.145785:  Parsing token )...OK
+
+11:34:04.146193:  AST: [{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'abs', 'arguements': ['x'], 'body': [None, {'type': 'IfStatement', 'condition': 'x<0', 'body': [{'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': '-x', 'attribute': None}}]}, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'x', 'attribute': None}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'max', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'm', 'body': {'type': 'VariableExpression', 'expression': 'x[0]', 'attribute': None}}, None, {'type': 'ForStatement', 'loopVariable': 'n', 'sequence': 'x', 'body': [None, {'type': 'IfStatement', 'condition': 'n>m', 'body': [{'type': 'AssignmentStatement', 'name': 'm', 'body': {'type': 'VariableExpression', 'expression': 'x', 'attribute': None}}]}]}, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'm', 'attribute': None}}, None]}, None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['max([1', '9', '2', '3]']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:34:04.146498:  Generating code...
+11:34:04.146814:  Python code:
+
+def ceil(x):
+    x = -x//1
+    return int(-x)
+def floor(x):
+    return int(x//1)
+def abs(x):
+    if x<0:
+        return -x
+    return x
+def max(x):
+    m = x[0]
+    for n in x:
+        if n>m:
+            m = x
+    return m
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+print(ceil(1.1)
+)
+print(floor(1.1)
+)
+print(max([1, 9, 2, 3])
+)
+
+
+11:34:04.147093:  Executing...
+
+11:34:07.249013:  ERROR: '>' not supported between instances of 'int' and 'list'
+
+11:34:07.249820:  Run time: 0:00:03.143574
+11:34:07.250313:  End session 2026-05-29
+---------------------------------------------
+
+11:34:52.718036:  New session: 2026-05-29
+11:34:52.718700:  Compiler Start
+
+11:34:52.718980:  Lexing...
+11:34:52.719551:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'max', '(', '[', '1', ',', '9', ',', '2', ',', '3', ']', ')', ')', '\n']
+
+
+11:34:52.719954:  Parsing...
+11:34:52.720291:  Parsing token import...11:34:52.737298:  Parsing token func...11:34:52.737735:  Parsing token x...OK
+11:34:52.738299:  Parsing token return...OK
+OK
+11:34:52.738963:  Parsing token func...11:34:52.739235:  Parsing token return...OK
+OK
+11:34:52.739729:  Parsing token func...11:34:52.739956:  Parsing token if...11:34:52.740230:  Parsing token return...OK
+OK
+11:34:52.740899:  Parsing token return...OK
+OK
+11:34:52.741567:  Parsing token /...OK
+OK
+11:34:52.742117:  Parsing token func...11:34:52.742362:  Parsing token flt...OK
+11:34:52.742875:  Parsing token str...OK
+11:34:52.743268:  Parsing token flt...OK
+11:34:52.743636:  Parsing token flt...OK
+11:34:52.744055:  Parsing token firstnumber...OK
+11:34:52.744506:  Parsing token operator...OK
+11:34:52.744930:  Parsing token secondnumber...OK
+11:34:52.745312:  Parsing token operations...OK
+11:34:52.745742:  Parsing token output...OK
+11:34:52.746107:  Parsing token return...OK
+OK
+11:34:52.746767:  Parsing token print...OK
+11:34:52.747129:  Parsing token )...OK
+11:34:52.747496:  Parsing token print...OK
+11:34:52.747872:  Parsing token )...OK
+11:34:52.748392:  Parsing token print...OK
+11:34:52.748971:  Parsing token )...OK
+11:34:52.749777:  Parsing token print...OK
+11:34:52.750149:  Parsing token )...OK
+
+11:34:52.750565:  AST: [{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'abs', 'arguements': ['x'], 'body': [None, {'type': 'IfStatement', 'condition': 'x<0', 'body': [{'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': '-x', 'attribute': None}}]}, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'x', 'attribute': None}}, None]}, None, None, None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['max([1', '9', '2', '3]']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:34:52.750822:  Generating code...
+11:34:52.751104:  Python code:
+
+def ceil(x):
+    x = -x//1
+    return int(-x)
+def floor(x):
+    return int(x//1)
+def abs(x):
+    if x<0:
+        return -x
+    return x
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+print(ceil(1.1)
+)
+print(floor(1.1)
+)
+print(max([1, 9, 2, 3])
+)
+
+
+11:34:52.751480:  Executing...
+11:34:57.680984:  Executed successfully.
+
+11:34:57.681964:  Run time: 0:00:04.963839
+11:34:57.682650:  End session 2026-05-29
+---------------------------------------------
+
+11:35:57.720508:  New session: 2026-05-29
+11:35:57.721082:  Compiler Start
+
+11:35:57.721328:  Lexing...
+11:35:57.721884:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'max', '(', '[', '1', ',', '9', ',', '2', ',', '3', ']', ')', ')', '\n']
+
+
+11:35:57.722246:  Parsing...
+11:35:57.722614:  Parsing token import...11:35:57.742357:  Parsing token func...11:35:57.742966:  Parsing token x...OK
+11:35:57.743426:  Parsing token return...OK
+OK
+11:35:57.744042:  Parsing token func...11:35:57.744332:  Parsing token return...OK
+OK
+11:35:57.744807:  Parsing token func...11:35:57.745081:  Parsing token if...11:35:57.745424:  Parsing token return...OK
+OK
+11:35:57.745927:  Parsing token return...OK
+OK
+11:35:57.746562:  Parsing token func...11:35:57.746819:  Parsing token m...OK
+11:35:57.747168:  Parsing token for...11:35:57.747401:  Parsing token if...11:35:57.747626:  Parsing token m...OK
+OK
+OK
+11:35:57.748397:  Parsing token return...OK
+OK
+OK
+11:35:57.749083:  Parsing token func...11:35:57.749331:  Parsing token flt...OK
+11:35:57.749840:  Parsing token str...OK
+11:35:57.750270:  Parsing token flt...OK
+11:35:57.750822:  Parsing token flt...OK
+11:35:57.751395:  Parsing token firstnumber...OK
+11:35:57.751929:  Parsing token operator...OK
+11:35:57.752682:  Parsing token secondnumber...OK
+11:35:57.753989:  Parsing token operations...OK
+11:35:57.754448:  Parsing token output...OK
+11:35:57.754947:  Parsing token return...OK
+OK
+11:35:57.755568:  Parsing token print...OK
+11:35:57.756000:  Parsing token )...OK
+11:35:57.756511:  Parsing token print...OK
+11:35:57.757082:  Parsing token )...OK
+11:35:57.758014:  Parsing token print...OK
+11:35:57.758755:  Parsing token )...OK
+11:35:57.759266:  Parsing token print...OK
+11:35:57.759745:  Parsing token )...OK
+
+11:35:57.760336:  AST: [{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'abs', 'arguements': ['x'], 'body': [None, {'type': 'IfStatement', 'condition': 'x<0', 'body': [{'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': '-x', 'attribute': None}}]}, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'x', 'attribute': None}}, None]}, None, None, {'type': 'FunctionDefineStatement', 'name': 'max', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'm', 'body': {'type': 'VariableExpression', 'expression': 'x[0]', 'attribute': None}}, None, {'type': 'ForStatement', 'loopVariable': 'n', 'sequence': 'x', 'body': [None, {'type': 'IfStatement', 'condition': 'n>m', 'body': [{'type': 'AssignmentStatement', 'name': 'm', 'body': {'type': 'VariableExpression', 'expression': 'x', 'attribute': None}}]}]}, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'm', 'attribute': None}}, None]}, None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['max([1', '9', '2', '3]']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:35:57.760750:  Generating code...
+11:35:57.761103:  Python code:
+
+def ceil(x):
+    x = -x//1
+    return int(-x)
+def floor(x):
+    return int(x//1)
+def abs(x):
+    if x<0:
+        return -x
+    return x
+def max(x):
+    m = x[0]
+    for n in x:
+        if n>m:
+            m = x
+    return m
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+print(ceil(1.1)
+)
+print(floor(1.1)
+)
+print(max([1, 9, 2, 3])
+)
+
+
+11:35:57.761603:  Executing...
+
+11:35:59.913589:  ERROR: '>' not supported between instances of 'int' and 'list'
+
+11:35:59.914533:  Run time: 0:00:02.193966
+11:35:59.915007:  End session 2026-05-29
+---------------------------------------------
+
+11:36:12.729512:  New session: 2026-05-29
+11:36:12.730117:  Compiler Start
+
+11:36:12.730528:  Lexing...
+11:36:12.731333:  Lexemes: ['import', '#', 'math', '\n', '\n', 'func', 'calc', '(', ')', '{', '\n', 'flt', 'firstnumber', '=', '0', '.', '0', '\n', 'str', 'operator', '=', "'", ' ', "'", '\n', 'flt', 'secondnumber', '=', '0', '.', '0', '\n', '\n', 'flt', 'output', '=', '0', '.', '0', '\n', '\n', 'firstnumber', '=', 'input', '(', '"', 'inputnumber1', ':', '"', ')', '\n', 'operator', '=', 'input', '(', '"', 'operator', '[', '+', ',', '-', ',', '/', ',', '*', ']', ':', '"', ')', '\n', 'secondnumber', '=', 'input', '(', '"', 'inputnumber2', ':', '"', ')', '\n', '\n', 'operations', '=', '{', '\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n', '}', '\n', '\n', 'output', '=', 'operations', '.', 'get', '(', 'operator', ')', '\n', 'return', 'output', '\n', '\n', '}', '\n', '\n', 'print', '(', 'calc', '(', ')', ')', '\n', '\n', 'print', '(', 'ceil', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'floor', '(', '1', '.', '1', ')', ')', '\n', 'print', '(', 'max', '(', '[', '1', ',', '9', ',', '2', ',', '3', ']', ')', ')', '\n']
+
+
+11:36:12.732087:  Parsing...
+11:36:12.732661:  Parsing token import...11:36:12.734436:  Parsing token func...11:36:12.734919:  Parsing token x...OK
+11:36:12.736098:  Parsing token return...OK
+OK
+11:36:12.737194:  Parsing token func...11:36:12.737786:  Parsing token return...OK
+OK
+11:36:12.739044:  Parsing token func...11:36:12.739416:  Parsing token if...11:36:12.739802:  Parsing token return...OK
+OK
+11:36:12.740496:  Parsing token return...OK
+OK
+11:36:12.741030:  Parsing token /...OK
+OK
+11:36:12.741514:  Parsing token func...11:36:12.741747:  Parsing token flt...OK
+11:36:12.742104:  Parsing token str...OK
+11:36:12.742443:  Parsing token flt...OK
+11:36:12.742894:  Parsing token flt...OK
+11:36:12.743263:  Parsing token firstnumber...OK
+11:36:12.743636:  Parsing token operator...OK
+11:36:12.744054:  Parsing token secondnumber...OK
+11:36:12.744503:  Parsing token operations...OK
+11:36:12.744925:  Parsing token output...OK
+11:36:12.745348:  Parsing token return...OK
+OK
+11:36:12.745964:  Parsing token print...OK
+11:36:12.746310:  Parsing token )...OK
+11:36:12.746789:  Parsing token print...OK
+11:36:12.747174:  Parsing token )...OK
+11:36:12.747562:  Parsing token print...OK
+11:36:12.747908:  Parsing token )...OK
+11:36:12.748247:  Parsing token print...OK
+11:36:12.748705:  Parsing token )...OK
+
+11:36:12.749253:  AST: [{'type': 'FunctionDefineStatement', 'name': 'ceil', 'arguements': ['x'], 'body': [None, {'type': 'AssignmentStatement', 'name': 'x', 'body': {'type': 'VariableExpression', 'expression': '-x//1', 'attribute': None}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['-x']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'floor', 'arguements': ['x'], 'body': [None, {'type': 'ReturnStatement', 'arguement': {'type': 'FunctionCall', 'name': 'int', 'arguements': ['x//1']}}, None]}, None, {'type': 'FunctionDefineStatement', 'name': 'abs', 'arguements': ['x'], 'body': [None, {'type': 'IfStatement', 'condition': 'x<0', 'body': [{'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': '-x', 'attribute': None}}]}, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'x', 'attribute': None}}, None]}, None, None, None, None, {'type': 'FunctionDefineStatement', 'name': 'calc', 'arguements': '', 'body': [None, {'type': 'FloatVariable', 'name': 'firstnumber', 'value': 0.0}, {'type': 'StringVariable', 'name': 'operator', 'value': "' '"}, {'type': 'FloatVariable', 'name': 'secondnumber', 'value': 0.0}, None, {'type': 'FloatVariable', 'name': 'output', 'value': 0.0}, None, {'type': 'AssignmentStatement', 'name': 'firstnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber1:"']}}, None, {'type': 'AssignmentStatement', 'name': 'operator', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"operator[+', '-', '/', '*]:"']}}, None, {'type': 'AssignmentStatement', 'name': 'secondnumber', 'body': {'type': 'FunctionCall', 'name': 'input', 'arguements': ['"inputnumber2:"']}}, None, None, {'type': 'AssignmentStatement', 'name': 'operations', 'body': {'type': 'TableExpression', 'body': ['\n', "'", '-', "'", ':', 'int', '(', 'firstnumber', ')', '-', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '+', "'", ':', 'int', '(', 'firstnumber', ')', '+', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '*', "'", ':', 'int', '(', 'firstnumber', ')', '*', 'int', '(', 'secondnumber', ')', ',', '\n', "'", '/', "'", ':', 'int', '(', 'firstnumber', ')', '/', 'int', '(', 'secondnumber', ')', ',', '\n']}}, None, {'type': 'AssignmentStatement', 'name': 'output', 'body': {'type': 'VariableExpression', 'expression': 'operations', 'attribute': {'type': 'FunctionCall', 'name': 'get', 'arguements': ['operator']}}}, None, {'type': 'ReturnStatement', 'arguement': {'type': 'VariableExpression', 'expression': 'output', 'attribute': None}}, None, None]}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['calc(']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['ceil(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['floor(1.1']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None, {'type': 'FunctionCall', 'name': 'print', 'arguements': ['max([1', '9', '2', '3]']}, {'type': 'VariableExpression', 'expression': ')', 'attribute': None}, None]
+
+11:36:12.749562:  Generating code...
+11:36:12.749892:  Python code:
+
+def ceil(x):
+    x = -x//1
+    return int(-x)
+def floor(x):
+    return int(x//1)
+def abs(x):
+    if x<0:
+        return -x
+    return x
+def calc():
+    firstnumber = 0.0
+    operator = ' '
+    secondnumber = 0.0
+    output = 0.0
+    firstnumber = input("inputnumber1:")
+    operator = input("operator[+, -, /, *]:")
+    secondnumber = input("inputnumber2:")
+    operations = {
+'-':int(firstnumber)-int(secondnumber),
+'+':int(firstnumber)+int(secondnumber),
+'*':int(firstnumber)*int(secondnumber),
+'/':int(firstnumber)/int(secondnumber),
+}
+    output = operations.get(operator)
+
+    return output
+print(calc()
+)
+print(ceil(1.1)
+)
+print(floor(1.1)
+)
+print(max([1, 9, 2, 3])
+)
+
+
+11:36:12.750200:  Executing...
+11:36:14.770374:  Executed successfully.
+
+11:36:14.771067:  Run time: 0:00:02.041574
+11:36:14.771725:  End session 2026-05-29
+---------------------------------------------
